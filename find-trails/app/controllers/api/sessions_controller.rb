@@ -13,7 +13,7 @@ class Api::SessionsController < ApplicationController
   def create
     # email = params[:email]
     # password = params[:password]
-    debugger
+    # debugger
     @user = User.find_by_credentials(params[:email], params[:password])
     if @user
       login!(@user)
