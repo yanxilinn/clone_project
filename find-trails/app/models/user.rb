@@ -15,29 +15,30 @@ class User < ApplicationRecord
   has_many :reviews
   
 
-  attr_reader :password
+  # attr_reader :password
   before_validation :ensure_session_token
 
  
-  def self.find_by_credentials(credential, password)
-    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :first_name
-    user = User.find_by(field => credential)
-    if user&.authenticate(password)
-      return user
-    else 
-      nil
-    end 
+  def self.find_by_credentials(email, password)
+    # field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : null
+    user = User.find_by(email: email)
+    # if 
+      user&.authenticate(password)
+    #   return user
+    # else 
+    #   nil
+    # end 
   end 
 
-  def is_password?(password)
-    pass_obj = BCrypt::Password.new(self.password_digest)
-    pass_obj.is_password?(password)
-  end
+  # def is_password?(password)
+  #   pass_obj = BCrypt::Password.new(self.password_digest)
+  #   pass_obj.is_password?(password)
+  # end
 
-  def password=(password)
-    @password = password
-    self.password_digest = BCrypt::Password.create(password)
-  end
+  # def password=(password)
+  #   @password = password
+  #   self.password_digest = BCrypt::Password.create(password)
+  # end
 
   def reset_session_token!
     self.update!(session_token: generate_unique_session_token)

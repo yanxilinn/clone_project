@@ -11,9 +11,10 @@ class Api::SessionsController < ApplicationController
 
   before_action :require_logged_in, only: [:create]
   def create
-    email = params[:email]
-    password = params[:password]
-    @user = User.find_by_credentials(params[:credential], params[:password])
+    # email = params[:email]
+    # password = params[:password]
+    debugger
+    @user = User.find_by_credentials(params[:email], params[:password])
     if @user
       login!(@user)
       render '/api/users/show'
