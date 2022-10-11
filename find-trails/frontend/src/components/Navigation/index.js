@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import LoginFormModal from '../LoginFormModal';
+// import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import logo2 from '../Navigation/logo2.png';
 
@@ -17,8 +17,13 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <Link to="/signup">Sign Up</Link>
-        <LoginFormModal />
+      <div className='signup'>
+        <Link id='signup' to="/signup">Sign Up</Link>
+      </div>
+      <div className='login'>
+        <Link id='login' to="/login">Log In</Link>
+      </div>
+        {/* <LoginFormModal /> */}
       </>
     );
   }
