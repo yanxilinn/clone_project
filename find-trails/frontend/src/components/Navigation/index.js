@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -16,21 +16,26 @@ function Navigation() {
     );
   } else {
     sessionLinks = (
-      <div className='loginPage'>
+      <>
+        <Link to="/signup">Sign Up</Link>
         <LoginFormModal />
-        <NavLink to="/signup" >Sign Up</NavLink>
-      </div>
+      </>
     );
   }
 
   return (
-        <div className='homePage'>
-            <NavLink exact to='/'>
-              <img src={logo2} alt="logo"/>
-            </NavLink>
+    <div className='nav'>
+        <div className='logo'>
+          <Link id="logo-link" to='/'>
+            <img id='logo-img-home' src={logo2} alt="logo"/>
+          </Link>
+        </div>
+
+        <div className='sessionLink'>
             {sessionLinks}
         </div>
-        // {sessionLinks},
+    </div>
+        // {sessionLinks}
         
   );
 }
