@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { Link } from 'react-router-dom';
 import './SignupForm.css';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
-  // const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -37,42 +39,77 @@ function SignupFormPage() {
   };
 
   return (
-    <>
-      <h1>Sign Up</h1>
+    <div className="box">
+    <div className="signup-page">
+      <div id="create-account">
+      <h1>Create your free account</h1>
+      </div>
+      <div className="session-form">
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
-        <label>
-          Email
+        {/* <label>First Name:</label> */}
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="   First Name"
+            required
+          />
+        {/* <label>Last Name:</label> */}
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder="   Last Name"
+            required
+          />
+        
+        {/* <label>Email:</label> */}
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="   Email"
             required
           />
-        </label>
-        <label>
-          Password
+        
+        {/* <label>Password:</label> */}
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="   Password"
             required
           />
-        </label>
-        <label>
-          Confirm Password
+        
+        {/* <label>Confirm Password:</label> */}
           <input
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="   Comfirm Password"
             required
           />
-        </label>
-        <button type="submit">Sign Up</button>
+       
+      {/* <div className="button"> */}
+      <button className="button" to='/login'>Sign Up</button>
+      {/* </div> */}
       </form>
-    </>
+      </div>
+
+<div className="or">
+  <div className="text" >or</div>
+  <hr className="hr"/>
+</div>
+    
+      <div id="have-account">
+      <>Already have an account?  </>
+      <Link id="link" to="/login">Log in </Link>
+      </div>
+    </div>
+    </div>
   );
 }
 

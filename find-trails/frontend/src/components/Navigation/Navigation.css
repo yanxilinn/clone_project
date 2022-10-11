@@ -1,50 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* .profile-dropdown {
   position: absolute;
 } */
 
 .nav{
-  background-color: aquamarine;
-  height: 10vh;
-  width: 100%;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  /* background-color: aquamarine; */
+}
+
+.nav-left {
+  display: flex;
+  width: 33%;
+  height: 1%;
+  justify-content: space-between;
+  text-align: center;
+  vertical-align: middle;
+  /* border: 1px solid black; */
 }
 
 .logo{
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  /* width: 100px; */
-  /* display: table-cell;
-  vertical-align: middle; */
-  /* text-align: center; */
-  /* display: flex;
+  /* display: flex; */
+  width: 20%;
+  height: auto;
   justify-content: center;
-  align-items: center; */
-  /* display: table-cell;
-  vertical-align: middle;
-  text-align: center; */
+  /* border: 1px solid red; */
 } 
 
-#logo-img-home{
-  /* margin: auto; */
-  justify-content: center;
-  width: 15em;
-  height: 4em;
-  /* display: flex; */
-  /* align-items: center; */
-  /* font-display: center; */
-  /* background-color: transparent;
+#logo-link{
+  width: 50%;
+  height: auto;
+  display:table-cell;
   vertical-align: middle;
-  display: center;
-  justify-content: center;
-  align-items: center; */
+  text-align: center;
+  /* border: 1px solid green; */
 }
 
-.sessionLink{
-  /* background-color: white;
-  align-items: right;
-  justify-content: space-around;
-  padding: 1px 10px 2px 10px; */
+#logo-img-home{
+  width: 50%;
+  height: auto;
+  vertical-align: middle;
+  /* border: 1px solid blue; */
+}
+
+.nav-right{
+  display: flex;  
+  width: 33%;
+  justify-content: flex-end;
+  /* background-color: yellow; */
+  /* align-items: right; */
+  /* justify-content: space-around; */
+  /* padding: 1px 10px 2px 10px; */
   
 }
 
