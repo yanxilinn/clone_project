@@ -1,15 +1,17 @@
 .home{
     background-color: transparent;
-    height: 1000vh;
+    height: 150vh;
+    margin-top: 1%;
     display: flex;
     width: 100%;
+    /* background-color: pink; */
+    z-index: -9;
 }
 
 .homepage-bg{ 
-    margin-top: 1%;
+    /* display: flex; */
     width: 100%;
     height: 55vh;
-    z-index: -10;
     background: url(bg2.jpg) no-repeat;
     background-size: cover;
     /* position: absolute; */
@@ -26,3 +28,155 @@
     /* padding-top: 9%; */
 }
 
+.block1{
+    margin-top: 17.7%;
+    background-color: rgba(211, 211, 211, 0.842);
+    height: 70%;
+    text-align: center;
+
+}
+
+.block2{
+ /* border: 5px solid yellow; */
+ margin-top: 5%;
+ margin-left: 18%;
+ margin-right: 18%;
+ display: flex;
+}
+
+
+.block3{
+    /* border: 3px solid black; */
+    height: 80%;
+    width: 53%;
+    /* margin-right: 40%; */
+    /* margin-top: 4%; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#pic-top{
+    /* border: 3px solid red; */
+    height: auto;
+    width: 106%;
+    margin-left: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#hiking{
+    width: 20vh;
+    height: 20vh;
+}
+
+#hiking:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+#running{
+    width: 20vh;
+    height: 20vh;
+}
+
+#running:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+#wheelchair{
+    width: 20vh;
+    height: 20vh;
+}
+
+#wheelchair:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+#pic-bot{
+    /* border: 3px solid blue; */
+    height: auto;
+    width: 106%;
+    margin-top: 2%;
+    margin-left: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mountainBike{
+    width: 20vh;
+    height: 20vh;
+}
+
+#mountainBike:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+#dog{
+    width: 20vh;
+    height: 20vh;
+}
+
+#dog:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+#roadBike{
+    width: 20vh;
+    height: 20vh;
+}
+
+#roadBike:hover{
+    animation: .5s 1 forwards scales; 
+}
+
+
+@keyframes scales {
+    10% {transform: scale(1.003);}
+    30% {transform: scale(1.006);}
+    50% {transform: scale(1.009);}
+    70% {transform: scale(1.012);}
+    100% {transform: scale(1.015);}
+}
+
+
+.block4{
+    /* border: 3px solid green; */
+    /* background-color: aqua; */
+    /* heigh:  */
+    margin-left: 8%;
+    margin-top: 7%;
+    margin-right: 5%;
+}
+
+#text1{
+    /* border: 2px solid blue; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 200%;
+    color: var(--typography-dark-gray);
+}
+
+#text2{
+    /* border: 2px solid blue; */
+    margin-right: 25%;
+    margin-top: 5%;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    line-height: 2;
+    font-size: 100%;
+    color: var(--typography-dark-gray);
+}
+
+#botton{
+    margin-top: 10%;
+    border: 2px solid gray;
+    height: 13%;
+    margin-right: 75%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signup{
+    color: black;
+    font-family: Proxima Nova,Arial,sans-serif;
+}
