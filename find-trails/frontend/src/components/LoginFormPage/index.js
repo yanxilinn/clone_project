@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './LoginForm.css';
 import { Link } from 'react-router-dom';
+// import TextField from '@mui/material/TextField';
 
 
 function LoginFormPage() {
@@ -37,7 +38,7 @@ function LoginFormPage() {
     e.preventDefault();
     setEmail("yanxilinnn@gmail.com")
     setPassword("password")
-    return dispatch(sessionActions.login({ setEmail, setPassword }))
+    dispatch(sessionActions.login({ email: "yanxilinnn@gmail.com", password: "password" }))
   }
 
   return (
@@ -73,10 +74,10 @@ function LoginFormPage() {
           <div className="text2" >or</div>
           <hr className="hr2"/>
         </div>
-      </form>
       <div className="demo">
-        <button className="demo-login" onClick={handleDemo} to='/'>Demo User</button>
+        <button className="demo-login" onClick={handleDemo}>Demo User</button>
       </div>
+      </form>
       <div className="resignup-link">
         <Link to='/signup'>Forgot your password?</Link>
         </div>
