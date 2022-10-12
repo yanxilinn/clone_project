@@ -37,6 +37,7 @@ function LoginFormPage() {
     e.preventDefault();
     setEmail("yanxilinnn@gmail.com")
     setPassword("password")
+    return dispatch(sessionActions.login({ setEmail, setPassword }))
   }
 
   return (
@@ -74,7 +75,7 @@ function LoginFormPage() {
         </div>
       </form>
       <div className="demo">
-        <button className="demo-login" onClick={handleDemo}>Demo User</button>
+        <button className="demo-login" onClick={handleDemo} to='/'>Demo User</button>
       </div>
       <div className="resignup-link">
         <Link to='/signup'>Forgot your password?</Link>

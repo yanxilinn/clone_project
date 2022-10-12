@@ -94,7 +94,7 @@ function SignupFormPage() {
           />
        
       {/* <div className="button"> */}
-      <button className="button" to='/login'>Sign Up</button>
+      <button className="button" onSubmit={handleSubmit} to='/'>Sign Up</button>
       {/* </div> */}
       </form>
       </div>

@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
     end 
   end
 
-  before_action :require_logged_in, only: [:create]
+  # before_action :require_logged_in, only: [:create]
   def create
     # email = params[:email]
     # password = params[:password]

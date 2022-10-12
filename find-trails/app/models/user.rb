@@ -6,10 +6,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates :email, uniqueness: true, length: { in: 3..255 }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :first_name, 
-    length: { in: 3..30 }, 
+    length: { in: 2..30 }, 
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   validates :last_name, 
-    length: { in: 3..30 }, 
+    length: { in: 2..30 }, 
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   
   has_many :reviews
