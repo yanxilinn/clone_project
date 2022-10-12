@@ -7,6 +7,8 @@ import mountainBike from '../HomePage/mountainBiking.png';
 import roadBike from '../HomePage/roadBiking.png';
 import running from '../HomePage/running.png';
 import wheelchair from '../HomePage/wheelchair.png';
+import search from '../HomePage/search.png';
+import click from '../HomePage/click.png';
 // import * as sessionActions from "../../store/session"; 
 // import bg1 from '../HomePage/bg1.jpg';
 // import bg2 from '../HomePage/bg2.jpg';
@@ -40,31 +42,41 @@ return (
         <div id='hello'>
             { helloMessage }
         </div>
+ 
+        <div className='search-home'>
+            
+           <img src={search} alt=""/> 
+          <input className='bar' placeholder=' Search by city, park, or trail name'>
+          </input>
+          {/* <button className="search-button" to='/'>SEARCH</button> */}
+        </div>
+
+
         <div className='block1'>
-            This is home page block1 
+            {/* This is home page block1  */}
         </div>
         <div className='block2'>
         <div className='block3'>
             <div id="pic">
                 <div id="pic-top">
-                    <Link id="hiking" to='login'>
-                        <img id='hiking' src={hiking} alt="hiking"></img> 
+                    <Link id="hiking" to="/login">
+                        <img id='hiking'  src={hiking} alt="hiking"></img> 
                     </Link>
-                    <Link id="running" to='login'>
+                    <Link id="running" to='/login'>
                         <img id='running' src={running} alt="running"></img> 
                     </Link>
-                    <Link id="wheelchair" to='login'>
+                    <Link id="wheelchair" to='/login'>
                         <img id='wheelchair' src={wheelchair} alt="wheelchair"></img> 
                     </Link>
                 </div>
                 <div id='pic-bot'>
-                    <Link id="mountainBike" to='login'>
+                    <Link id="mountainBike" to='/login'>
                         <img id='mountainBike' src={mountainBike} alt="mountainBike"></img> 
                     </Link>
-                    <Link id="dog" to='login'>
+                    <Link id="dog" to='/login'>
                         <img id='dog' src={dog} alt="dog"></img> 
                     </Link>
-                    <Link id="roadBike" to='login'>
+                    <Link id="roadBike" to='/login'>
                         <img id='roadBike' src={roadBike} alt="roadBike"></img> 
                     </Link>
                 </div>

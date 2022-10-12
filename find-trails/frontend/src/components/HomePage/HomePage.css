@@ -3,35 +3,58 @@
     height: 150vh;
     margin-top: 1%;
     display: flex;
+    justify-content: center;
     width: 100%;
     /* background-color: pink; */
-    z-index: -9;
+    /* z-index: 1; */
 }
 
 .homepage-bg{ 
-    /* display: flex; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
     width: 100%;
     height: 55vh;
     background: url(bg2.jpg) no-repeat;
     background-size: cover;
     /* position: absolute; */
+    
 } 
 
 #hello{
-    margin: 8%;
+    margin-top: 8%;
     /* border: 5px solid red; */
     text-align: center;
     color: white;
     font-family: Proxima Nova,Arial,sans-serif;
     font-size: 44px;
     font-weight: bold;
-    /* padding-top: 9%; */
+}
+
+.search-home{
+    margin-left:35%;
+    margin-right: 35%;
+    margin-top: 2%;
+    background-color: blueviolet;
+}
+
+.bar{
+    border: 5px solid yellow;
+    border-radius: 35px;
+    height: 30px;
+    width: 80%;
+    margin-left: 8%;
+    
+}
+
+.search-button{
+    
 }
 
 .block1{
-    margin-top: 17.7%;
+    margin-top: 13%;
     background-color: rgba(211, 211, 211, 0.842);
-    height: 70%;
+    height: 1%;
     text-align: center;
 
 }
