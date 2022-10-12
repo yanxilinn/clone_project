@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
+import HomePage from "./components/HomePage";
 // import LoginForm from "./components/LoginFormModal/LoginForm";
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
     <>
       <Navigation />
         <Switch>
-         
+          <Route exact path="/" >
+            <HomePage />
+          </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>

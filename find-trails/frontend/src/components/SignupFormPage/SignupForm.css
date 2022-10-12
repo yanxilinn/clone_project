@@ -62,10 +62,10 @@
     outline: none;
 }
 
-.session-form label{
+/* .session-form label{
     position: absolute;
     color: black;
-} 
+}  */
 
 .button{
     border-radius: 35px;
