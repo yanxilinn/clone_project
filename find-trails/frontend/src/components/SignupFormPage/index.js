@@ -16,7 +16,7 @@ function SignupFormPage() {
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) {
-    console.log(sessionUser);
+    // console.log(sessionUser);
     return <Redirect to="/" />;
   }
 

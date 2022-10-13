@@ -4,5 +4,26 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.9"
-  }
+  },
+  "name": "find-trails",
+  "description": "FindTails",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannnmc/Cozybnb/issues"
+  },
+  "homepage": "https://github.com/hannnmc/Cozybnb#readme",
+   "engines": {
+     "node": "16.x"
+   }
 }
