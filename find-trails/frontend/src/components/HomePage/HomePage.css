@@ -51,20 +51,24 @@
 }
 
 .bar{
-    /* border: 5px solid yellow; */
-    /* border-radius: 35px; */
+    margin-top: 1%;
     height: 30px;
     width: 80%;
-    /* margin-left: 8%; */
-    
+    outline:none;
+    border:none;
+}
+
+.bar:focus{
+    padding: 0%;
+   
 }
 
 #click{
     /* border: 2px solid white; */
     width: 30px;
     height: 30px;
-    margin-top: 1%;
-    
+    margin-right: 0%;
+    margin-top: 0.5%;
 }
 
 .block1{
@@ -253,4 +257,20 @@
 #signup{
     color: black;
     font-family: Proxima Nova,Arial,sans-serif;
+}
+
+.block5{
+    margin-top: 5%;
+    height: 40%;
+    background-color: rgba(211, 211, 211, 0.842);
+}
+
+#about{
+    /* background-color: aqua; */
+    margin-left: 2%;
+    margin-right: 90%;
+    padding-top: 2%;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-weight: bold;
+    font-size: larger;
 }

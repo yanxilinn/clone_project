@@ -46,8 +46,7 @@ return (
         <div className='search-home'>
             
            <img id="search" src={search} alt=""/> 
-          <input className='bar' placeholder=' Search by city, park, or trail name'>
-          </input>
+          <input className='bar' placeholder=' Search by city, park, or trail name' />
           <img id="click" src={click} alt=""/> 
           {/* <button className="search-button" to='/'>SEARCH</button> */}
         </div>
@@ -94,6 +93,9 @@ return (
                 <Link id='signup' to="/signup">Sign Up</Link>
             </div>
         </div>
+        </div>
+        <div className='block5'>
+            <div id="about">About Me</div>
         </div>
 
 
