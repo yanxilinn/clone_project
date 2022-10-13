@@ -45,16 +45,21 @@ return (
  
         <div className='search-home'>
             
-           <img src={search} alt=""/> 
+           <img id="search" src={search} alt=""/> 
           <input className='bar' placeholder=' Search by city, park, or trail name'>
           </input>
+          <img id="click" src={click} alt=""/> 
           {/* <button className="search-button" to='/'>SEARCH</button> */}
         </div>
-
-
         <div className='block1'>
-            {/* This is home page block1  */}
+            <div className='title'>
+                <div id="title">Local favorites in New York</div>
+             <div className='home-show'>
+             </div>
+            </div>
         </div>
+
+
         <div className='block2'>
         <div className='block3'>
             <div id="pic">
