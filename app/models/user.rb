@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_secure_password
+  has_secure_password
 
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true, format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }

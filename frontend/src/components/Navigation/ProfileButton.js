@@ -34,15 +34,15 @@ function ProfileButton({ user }) {
   return (
     <>
     <div className="profile">
-      <Link id='icon-pro'>
-      <img id='click-pro' onClick={openMenu} src={pro} alt="pro" />
+      <Link id='icon-pro'to='/' >
+        <img id='click-pro' onClick={openMenu} src={pro} alt="pro" />
       </Link>
     </div>
     <>
     {showMenu && (
         <ul className="profile-dropdown">
           Hi, {user.firstName}
-          <div className="out">
+          <div className="out" to='/' >
           <Link id='logout' onClick={logout}>Log Out</Link>
         </div>
         </ul>

@@ -1,15 +1,17 @@
 .trailPage{
-    border: 3px solid green;
+    border: 1px solid rgb(237, 232, 232);
+    background-color: #f2f2f2;
     min-height: 200vh;
     align-items: center;
+    /* z-index: -10; */
 }
 
 .tailPath{
     /* border: 5px solid blue; */
     margin: auto;
     min-height: 50px;
-    min-width: 400px;
-    max-width: 60%;
+    min-width: 500px;
+    width: 40%;
     display: flex;
     justify-content: center;
 }
@@ -32,13 +34,15 @@
     display: flex;
     min-height: 70%;
     max-width: 100%;
+    min-width: 90px;
     align-self: center;
 }
 
 #path2{
     /* align-self: center; */
-    min-width: 90%;
+    min-width: 90px;
     min-height: 80%;
+    width: 100%;
     font-size: 12px;
 }
 
@@ -58,8 +62,8 @@
     /* width: 60%; */
     margin: auto;
     min-height: 400px;
-    min-width: 400px;
-    max-width: 60%;
+    min-width: 500px;
+    max-width: 40%;
     justify-content: center;
 }
 
@@ -73,7 +77,7 @@
 }
 
 .imgList {
-    animation:rolling 100s linear infinite;
+    animation:rolling 50s linear infinite;
     position: absolute;
     display: center;
 }

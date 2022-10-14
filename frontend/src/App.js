@@ -4,7 +4,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
-import TrailsPage from "./components/TrialPage/TrailsPage";
+import TrailsPage from "./components/TrialPage/TrailPage";
 // import LoginForm from "./components/LoginFormModal/LoginForm";
 
 function App() {
@@ -15,15 +15,13 @@ function App() {
           <Route exact path="/" >
             <HomePage />
           </Route>
-          <Route path="/login" >
+          <Route exact path="/login" >
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/trails">
-            <TrailsPage />
-          </Route>
+          <Route exact path="/trails/:trailId" component={TrailsPage} />
         </Switch>
     </>
   );
