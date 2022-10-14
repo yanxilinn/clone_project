@@ -31,6 +31,7 @@ function Navigation() {
     <>
       <div className='nav'>
         <div className='nav-left'>
+          <div className='explore'>explore</div>
             {/* <div>
               explore
             </div>

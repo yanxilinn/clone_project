@@ -24,6 +24,8 @@
     margin-top: 5%;
     width: 20%;
     height: 60%;
+    min-height: 530px;
+    min-width: 177px;
     display: flex;
     justify-content: center;
     display: table-row;

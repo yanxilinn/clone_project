@@ -10,9 +10,9 @@ import wheelchair from '../HomePage/wheelchair.png';
 import search from '../HomePage/search.png';
 import click from '../HomePage/click.png';
 // import * as sessionActions from "../../store/session"; 
-// import bg1 from '../HomePage/bg1.jpg';
-// import bg2 from '../HomePage/bg2.jpg';
-// import bg3 from '../HomePage/bg3.jpg';
+// import bg1 from '../HomePage/bg1.png';
+// import bg2 from '../HomePage/bg2.png';
+// import bg3 from '../HomePage/bg3.png';
 
 
 const HomePage = () => {   

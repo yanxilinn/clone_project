@@ -1,0 +1,212 @@
+.trailPage{
+    border: 3px solid green;
+    min-height: 200vh;
+    align-items: center;
+}
+
+.tailPath{
+    /* border: 5px solid blue; */
+    margin: auto;
+    min-height: 50px;
+    min-width: 590px;
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.path1{
+    width: 65%;
+    align-self: center;
+}
+
+.path2{
+    width: 35%;
+    /* text-align: right; */
+    /* align-self: right; */
+    align-self: center;
+
+}
+
+.trailBox{
+    /* border: 2px solid yellow; */
+    display: flex;
+    min-height: 70%;
+    max-width: 100%;
+    align-self: center;
+}
+
+#path2{
+    /* align-self: center; */
+    min-width: 80%;
+    min-height: 80%;
+    font-size: 12px;
+}
+
+#search{
+    max-height: 90%;
+    align-self: center;
+}
+
+#searchPic{
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+
+.trailPicPage{
+    /* background-color: aqua; */
+    width: 100%;
+    margin: auto;
+    min-height: 400px;
+    min-width: 590px;
+    max-width: 80%;
+    justify-content: center;
+}
+
+.trailPic{
+    /* border: 2px solid black; */
+    min-width: 100%;
+    min-height: 325px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.imgList {
+    animation:rolling 90s linear infinite;
+    position: absolute;
+    display: center;
+}
+
+#img{
+    width: 100%;
+}
+
+@keyframes rolling {
+    0% {transform: translateY(0%);}
+    60% {transform: translateY(-80%);}
+    100% {transform: translateY(0%);}   
+}
+
+.trailPic2{
+    background-color: rgba(0, 128, 0, 0.639);
+    width: 80%;
+    min-height: 100px;
+    z-index: 10;
+    position: absolute;
+    /* margin-top: -5%; */
+    min-width: 590px;
+    margin-bottom: auto;
+    display: column;
+}
+
+.trailIcon{
+    /* background-color: rgba(0, 0, 0, 0.046); */
+    width: 100%;
+    height: 65px;
+    margin-bottom: 20%;
+    /* margin: auto; */
+    margin : 0;
+	padding : 0;
+    display: flex;
+}
+
+.icon1{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self:flex-end;
+}
+#icon1{
+    width: 50px;
+}
+
+.icon2{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self:flex-end;
+}
+#icon2{
+    width: 50px;
+}
+
+.icon3{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self:flex-end;
+}
+#icon3{
+    width: 50px;
+}
+
+.icon4{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self:flex-end;
+}
+#icon4{
+    width: 50px;
+}
+
+.icon5{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: flex-end;
+}
+#icon5{
+    width: 50px;
+
+}
+
+.iconText{
+    /* background-color: red; */
+    width: 100%;
+    height: 35px;
+    display: flex;
+}
+
+#itext1{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: top;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#itext2{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: top;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#itext3{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: top;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#itext4{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: top;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#itext5{
+    /* border: 1px solid black; */
+    width: 20%;
+    text-align: center;
+    align-self: top;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+

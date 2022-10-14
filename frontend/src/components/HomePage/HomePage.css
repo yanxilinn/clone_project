@@ -19,6 +19,7 @@
     height: 56vh;
     background: url(bg2.jpg) no-repeat;
     background-size: cover;
+    min-height: 56vh;
     /* position: absolute; */
     
 } 
@@ -31,6 +32,7 @@
     font-family: Proxima Nova,Arial,sans-serif;
     font-size: 44px;
     font-weight: bold;
+    min-width: 680px;
 }
 
 .search-home{
@@ -40,6 +42,7 @@
     background-color: white;
     border-radius: 35px;
     display: flex;
+    min-width: 200px;
 }
 
 #search{
@@ -74,6 +77,7 @@
 .block1{
     margin-top: 14%;
     width: 100%;
+    min-width: none;
     background-color: rgba(211, 211, 211, 0.842);
     height: 100%;
     /* text-align: center; */
@@ -85,6 +89,7 @@
     margin-top: 3%;
     width: 100%;
     height: 6%;
+    min-width: 475px;
 
 }
 #title{
@@ -114,6 +119,7 @@
  margin-top: 5%;
  margin-left: 18%;
  margin-right: 18%;
+ min-width: 1050px;
  display: flex;
 }
 
@@ -218,6 +224,7 @@
     margin-left: 8%;
     margin-top: 6%;
     margin-right: 5%;
+    min-width: 350px;
 }
 
 #text1{
