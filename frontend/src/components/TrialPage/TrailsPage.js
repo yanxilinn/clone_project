@@ -60,7 +60,6 @@ const TrailsPage = () => {
                         <div id='itext5'>More</div>
                     </div>
                 </div>
-                
             </div>
 
         </div>
