@@ -14,7 +14,6 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchTrail, fetchTrails, getTrail, getTrails } from '../../store/trail';
 
-
 const TrailsPage = () => {
     const dispatch = useDispatch();
     const {trailId} = useParams();
@@ -31,7 +30,7 @@ const TrailsPage = () => {
     if (trail){
     return (
         <div className='trailPage'>
-                    <h1>{trail.tName}</h1>
+                    
                     <div className='tailPath'>
                         <div className='path1'>United States of America -- New York -- Manhattan</div>
                         <div className='path2'>
@@ -43,12 +42,18 @@ const TrailsPage = () => {
                             </div>
                         </div>
                     </div>
+                    
                     <div className='trailPicPage'>
                         <div className='trailPic'>
+                            <div className='trailName'>
+                                <div id='name'>{trail.tName}</div>
+                                <div id='difficult'>{trail.difficultyLevel}</div>
+                                <div id='location'>{trail.country} {trail.city}</div>
+                            </div>
                             <div className="imgList">
                                 <img id="img" src={tImg1} alt="" />
-                                <img id="img" src={tImg2} alt="" />
-                                <img id="img" src={tImg3} alt="" />
+                                {/* <img id="img" src={tImg2} alt="" />
+                                <img id="img" src={tImg3} alt="" /> */}
                             </div>
                         </div>
                         <div className='trailPic2'>

@@ -76,21 +76,51 @@
     position: relative;
 }
 
+.trailName{
+    border: 1px solid white;
+    z-index: 10;
+    position: absolute;
+    color: #f2f2f2;
+    font-family: Proxima Nova,Arial,sans-serif;
+    line-height: 1.1;
+    margin-top: 35%;
+    margin-left: 5%;
+}
+
+#name{
+    font-weight: 700;
+    font-size: 45px;
+}
+
+#difficult{
+    border: 2px solid green;
+    background-color: green;
+    border-radius: 35px;
+    justify-content: center;
+    font-size: 20px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+
+
+
 .imgList {
     animation:rolling 50s linear infinite;
     position: absolute;
     display: center;
+    /* z-index: -1; */
 }
 
 #img{
     width: 100%;
 }
 
-@keyframes rolling {
+/* @keyframes rolling {
     0% {transform: translateY(0%);}
     60% {transform: translateY(-80%);}
     100% {transform: translateY(0%);}   
-}
+} */
 
 .trailPic2{
     background-color: rgba(0, 128, 0, 0.639);
