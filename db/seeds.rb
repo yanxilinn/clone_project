@@ -18,6 +18,8 @@ ApplicationRecord.transaction do
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
+    ApplicationRecord.connection.reset_pk_sequence!('trails')
+
     User.create!(
       first_name: 'DemoUser',
       last_name: 'Lin' ,
@@ -26,9 +28,10 @@ ApplicationRecord.transaction do
       password: 'password'
     )
   
-    Trail.create!( t_name: 'TestTrail', length: '1000', longitude: '40.736287401994566',  latitude: '-73.9937891255057', difficulty_level: 'easy', elevation_gain: '100ft', estimated_time: '2h', description: 'This is a test trail. ', contry: 'USA', city: 'New York', park_id: '1')
+    Trail.create!( t_name: 'TestTrail', length: '1000', longitude: '40.736287401994566',  latitude: '-73.9937891255057', difficulty_level: 'easy', elevation_gain: '100ft', estimated_time: '2h', description: 'This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.This is a test trail.', contry: 'USA', city: 'New York', park_id: '1')
     Trail.create!( t_name: 'TestTrail222', length: '222',longitude: '222222222', latitude: '-222222222', difficulty_level: 'hard', elevation_gain: '222ft', estimated_time: '2h', description: 'This is a test trail222. ',contry: 'Canada', city: 'DDD', park_id: '2' )
     
+
     
     
     # More users
