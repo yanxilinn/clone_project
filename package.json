@@ -3,7 +3,8 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.9",
-    "@mui/material": "^5.10.9"
+    "@mui/material": "^5.10.9",
+    "google-map-react": "^2.2.0"
   },
   "name": "find-trails",
   "description": "FindTails",
@@ -12,7 +13,6 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -23,7 +23,7 @@
     "url": "https://github.com/hannnmc/Cozybnb/issues"
   },
   "homepage": "https://github.com/hannnmc/Cozybnb#readme",
-   "engines": {
-     "node": "16.x"
-   }
+  "engines": {
+    "node": "16.x"
+  }
 }
