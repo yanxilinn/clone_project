@@ -82,6 +82,8 @@
     height: 100%;
     /* text-align: center; */
     display: flex;
+    flex-direction: column;
+
 }
 
 .title{
@@ -93,24 +95,241 @@
 
 }
 #title{
-    /* background-color: aqua; */
+    background-color: aqua;
     margin-top: 13%;
     font-family: Proxima Nova,Arial,sans-serif;
     font-size: 24px;
     font-weight: 700; 
     line-height: 1.1;
     color: #333;
-    max-width: 1240px;
+    width: 60%;
     margin: 0 auto 12px;
-    text-align: center;
+    text-align: left;
 }
 
 .home-show{
-    /* border: 2px solid green; */
-    height: 50%;
+    border: 2px solid green;
+    height: 75%;
     width: 100%;
-    /* margin-top: 10%; */
+    margin-top: 1%;
     margin-left: 0%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.show-pic{
+    background-color: aqua;
+    height: 50%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.trail1{
+    width: 24%;
+    border: 5px solid white; 
+    border-radius: 35px;
+}
+
+.trail2{
+    width: 24%;
+    border: 5px solid white; 
+    border-radius: 35px;
+}
+
+.trail3{
+    width: 24%;
+    border: 5px solid white; 
+    border-radius: 35px;
+}
+
+.trail4{
+    width: 24%;
+    border: 5px solid white; 
+    border-radius: 35px;
+}
+
+.show-text{
+    border: 5px solid white;
+    height: 15%; 
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.trai1{
+    width: 24%;
+    border: 1px solid white; 
+}
+#t1-diff{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: green; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 13px;
+}
+#t1-n{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: black; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+#t1-lo{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#t1-leng{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.trai2{
+    width: 24%;
+    border: 1px solid white; 
+}
+#t2-diff{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: red; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 13px;
+}
+#t2-n{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: black; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+#t2-lo{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#t2-leng{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.trai3{
+    width: 24%;
+    border: 1px solid white; 
+}
+#t3-diff{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: rgb(89, 155, 196); 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 13px;
+}
+#t3-n{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: black; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+#t3-lo{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#t3-leng{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.trai4{
+    width: 24%;
+    border: 1px solid white; 
+}
+#t4-diff{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: green; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 13px;
+}
+#t4-n{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: black; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+#t4-lo{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#t4-leng{
+    border:1px solid red;
+    height: 24%;
+    width: 100%;
+    color: gray; 
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 

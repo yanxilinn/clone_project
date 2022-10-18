@@ -53,9 +53,41 @@ return (
         <div className='block1'>
             <div className='title'>
                 <div id="title">Local favorites in New York</div>
-             <div className='home-show'>
-             </div>
             </div>
+             <div className='home-show'>
+                <div className='show-pic'>
+                    <div className='trail1'>trail1</div>
+                    <div className='trail2'>trail2</div>
+                    <div className='trail3'>trail3</div>
+                    <div className='trail4'>trail4</div>
+                </div>
+                <div className='show-text'>
+                    <div className='trai1'>
+                        <div id="t1-diff">easy</div>
+                        <div id="t1-n">Mount Tamalpais State Trail</div>
+                        <div id="t1-lo">USA - New York</div>
+                        <div id="t1-leng">Length: 8.4mi</div>
+                    </div>
+                    <div className='trai2'>
+                        <div id="t2-diff">hard</div>
+                        <div id="t2-n">East and West Drive Loop</div>
+                        <div id="t2-lo">USA - New York</div>
+                        <div id="t2-leng">Length: 6.1mi</div>
+                    </div>
+                    <div className='trai3'>
+                        <div id="t3-diff">moderate</div>
+                        <div id="t3-n">Jennings Beach To Pine Creek Point Trail</div>
+                        <div id="t3-lo">USA - New York</div>
+                        <div id="t3-leng">Length: 4.9mi</div>
+                    </div>
+                    <div className='trai4'>
+                        <div id="t4-diff">easy</div>
+                        <div id="t4-n">Twin Brooks Park Loop</div>
+                        <div id="t4-lo">USA - New York</div>
+                        <div id="t4-leng">Length: 2.5mi</div>
+                    </div>
+                </div>
+             </div>
         </div>
 
 
