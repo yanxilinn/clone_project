@@ -10,9 +10,10 @@ import wheelchair from '../HomePage/wheelchair.png';
 import search from '../HomePage/search.png';
 import click from '../HomePage/click.png';
 // import * as sessionActions from "../../store/session"; 
-// import bg1 from '../HomePage/bg1.png';
-// import bg2 from '../HomePage/bg2.png';
-// import bg3 from '../HomePage/bg3.png';
+import t1 from '../HomePage/trail1.jpeg';
+import t2 from '../HomePage/trail2.jpeg';
+import t3 from '../HomePage/trail3.jpeg';
+import t4 from '../HomePage/trail4.jpeg';
 
 
 const HomePage = () => {   
@@ -51,15 +52,31 @@ return (
           {/* <button className="search-button" to='/'>SEARCH</button> */}
         </div>
         <div className='block1'>
+             <div className='home-show'>
             <div className='title'>
                 <div id="title">Local favorites in New York</div>
             </div>
-             <div className='home-show'>
                 <div className='show-pic'>
-                    <div className='trail1'>trail1</div>
-                    <div className='trail2'>trail2</div>
-                    <div className='trail3'>trail3</div>
-                    <div className='trail4'>trail4</div>
+                    <div className='trail1'>
+                            <Link to='/trails/1' >
+                                <img id="tImg" src={t1} alt="" />
+                            </Link>
+                    </div>
+                    <div className='trail2'>
+                            <Link to='/trails/2' >
+                                <img id="tImg" src={t2} alt="" />
+                            </Link>
+                    </div>
+                    <div className='trail3'>
+                            <Link to='/trails/3' >
+                                <img id="tImg" src={t3} alt="" />
+                            </Link>
+                    </div>
+                    <div className='trail4'>
+                            <Link to='/trails/4' >
+                                <img id="tImg" src={t4} alt="" />
+                            </Link>
+                    </div>
                 </div>
                 <div className='show-text'>
                     <div className='trai1'>

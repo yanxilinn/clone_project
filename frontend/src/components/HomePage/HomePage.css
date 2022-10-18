@@ -79,7 +79,7 @@
     width: 100%;
     min-width: none;
     background-color: rgba(211, 211, 211, 0.842);
-    height: 100%;
+    height: 75%;
     /* text-align: center; */
     display: flex;
     flex-direction: column;
@@ -88,15 +88,14 @@
 
 .title{
     /* border: 3px solid blue; */
-    margin-top: 3%;
+    /* margin-top: 1%; */
     width: 100%;
     height: 6%;
     min-width: 475px;
 
 }
 #title{
-    background-color: aqua;
-    margin-top: 13%;
+    /* background-color: aqua; */
     font-family: Proxima Nova,Arial,sans-serif;
     font-size: 24px;
     font-weight: 700; 
@@ -108,10 +107,10 @@
 }
 
 .home-show{
-    border: 2px solid green;
-    height: 75%;
+    /* border: 1px solid green; */
+    height: 100%;
     width: 100%;
-    margin-top: 1%;
+    /* margin-top: 1%; */
     margin-left: 0%;
     align-items: center;
     display: flex;
@@ -120,51 +119,60 @@
 }
 
 .show-pic{
-    background-color: aqua;
+    /* background-color: aqua; */
+    margin-top: 2%;
     height: 50%;
     width: 60%;
+    min-width: 1340px;
     display: flex;
     justify-content: space-around;
     
 }
+#tImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+    /* border: 5px solid white;  */
+}
 
 .trail1{
     width: 24%;
-    border: 5px solid white; 
     border-radius: 35px;
+    border: 15px solid transparent; 
 }
 
 .trail2{
     width: 24%;
-    border: 5px solid white; 
+    border: 15px solid transparent; 
     border-radius: 35px;
 }
 
 .trail3{
     width: 24%;
-    border: 5px solid white; 
+    border: 15px solid transparent; 
     border-radius: 35px;
 }
 
 .trail4{
     width: 24%;
-    border: 5px solid white; 
+    border: 15px solid transparent; 
     border-radius: 35px;
 }
 
 .show-text{
-    border: 5px solid white;
+    /* border: 5px solid white; */
     height: 15%; 
     width: 60%;
+    min-width: 1340px;
     display: flex;
     justify-content: space-around;
 }
 .trai1{
     width: 24%;
-    border: 1px solid white; 
+    /* border: 1px solid white;  */
 }
 #t1-diff{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: green; 
@@ -172,7 +180,7 @@
     font-size: 13px;
 }
 #t1-n{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: black; 
@@ -181,7 +189,7 @@
     font-weight: bold;
 }
 #t1-lo{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -192,7 +200,7 @@
     justify-content: flex-end;
 }
 #t1-leng{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -204,10 +212,10 @@
 }
 .trai2{
     width: 24%;
-    border: 1px solid white; 
+    /* border: 1px solid white;  */
 }
 #t2-diff{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: red; 
@@ -215,7 +223,7 @@
     font-size: 13px;
 }
 #t2-n{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: black; 
@@ -224,7 +232,7 @@
     font-weight: bold;
 }
 #t2-lo{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -235,7 +243,7 @@
     justify-content: flex-end;
 }
 #t2-leng{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -247,10 +255,10 @@
 }
 .trai3{
     width: 24%;
-    border: 1px solid white; 
+    /* border: 1px solid white;  */
 }
 #t3-diff{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: rgb(89, 155, 196); 
@@ -258,7 +266,7 @@
     font-size: 13px;
 }
 #t3-n{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: black; 
@@ -267,7 +275,7 @@
     font-weight: bold;
 }
 #t3-lo{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -278,7 +286,7 @@
     justify-content: flex-end;
 }
 #t3-leng{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -290,10 +298,10 @@
 }
 .trai4{
     width: 24%;
-    border: 1px solid white; 
+    /* border: 1px solid white;  */
 }
 #t4-diff{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: green; 
@@ -301,7 +309,7 @@
     font-size: 13px;
 }
 #t4-n{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: black; 
@@ -310,7 +318,7 @@
     font-weight: bold;
 }
 #t4-lo{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -321,7 +329,7 @@
     justify-content: flex-end;
 }
 #t4-leng{
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 24%;
     width: 100%;
     color: gray; 
@@ -338,7 +346,7 @@
  margin-top: 5%;
  margin-left: 18%;
  margin-right: 18%;
- min-width: 1050px;
+ min-width: 1320px;
  display: flex;
 }
 
