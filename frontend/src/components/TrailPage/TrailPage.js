@@ -1,5 +1,5 @@
 import './TrailsPage.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import search from './search.png';
 import tImg1 from "./testTrail1.jpeg";
 // import tImg2 from "./testTrail2.jpeg" ; 
@@ -17,6 +17,11 @@ import { fetchTrail, getTrail } from '../../store/trail';
 // import GoogleMapReact from 'google-map-react';  
 // import { Wrapper } from "@googlemaps/react-wrapper";
 import TrailMap from '../TrailPage/TrailMap.js';
+import trail1 from '../HomePage/trail1.jpeg';
+import trail2 from '../HomePage/trail2.jpeg';
+import trail3 from '../HomePage/trail3.jpeg';
+import trail4 from '../HomePage/trail4.jpeg';
+import trail5 from '../HomePage/trail5.jpeg';
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
@@ -29,6 +34,9 @@ const TrailsPage = () => {
         dispatch(fetchTrail(trailId));
     }, [dispatch, trailId]);
 
+    // const trailNum = trail.id; 
+    // const picNum = "trail" + trailNum;
+    // console.log(picNum);
  
     if (trail){
     return (
@@ -64,8 +72,6 @@ const TrailsPage = () => {
                     </div>
                     <div className="imgList">
                         <img id="img" src={tImg1} alt="" />
-                        {/* <img id="img" src={tImg2} alt="" />
-                        <img id="img" src={tImg3} alt="" /> */}
                     </div>
                 </div>
                 <div className='trailPic2'>
@@ -160,11 +166,73 @@ const TrailsPage = () => {
                     </div>
                     <div className='right-col'>
                         <div className='map'> 
-                        <TrailMap
-                        // Map 
-                        />
+                        <TrailMap Map />
                         </div>
                         <p id='suggest-edit'>Suggest Edit</p>
+                        <div className='nearby'>
+                        <div id='nearby'>Nearby Trails</div>
+                        <div className='near'>
+                            <div id='near-top'>
+                                <Link to='/trails/1' >
+                                    <img id="near-pic" src={trail1} alt="" />
+                                </Link>
+                            </div>
+                            <div id='near-bot'>
+                                <div className='near-trail'>
+                                    <div id="n-diff">Easy</div>
+                                    <div id="n-n">Mount Tamalpais State Trail</div>
+                                    <div id="n-lo">USA - New York</div>
+                                    <div id="n-leng">Length: 8.4mi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='near'>
+                            <div id='near-top'>
+                                <Link to='/trails/2' >
+                                    <img id="near-pic" src={trail2} alt="" />
+                                </Link>
+                            </div>
+                            <div id='near-bot'>
+                                <div className='near-trail'>
+                                    <div id="n-diff">Hard</div>
+                                    <div id="n-n">East and West Drive Loop</div>
+                                    <div id="n-lo">USA - New York</div>
+                                    <div id="n-leng">Length: 6.1mi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='near'>
+                            <div id='near-top'>
+                                <Link to='/trails/3' >
+                                    <img id="near-pic" src={trail3} alt="" />
+                                </Link>
+                            </div>
+                            <div id='near-bot'>
+                                <div className='near-trail'>
+                                    <div id="n-diff">Moderate</div>
+                                    <div id="n-n">Jennings Beach To Pine Creek Point Trail</div>
+                                    <div id="n-lo">USA - New York</div>
+                                    <div id="n-leng">Length: 4.9mi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='near'>
+                            <div id='near-top'>
+                                <Link to='/trails/4' >
+                                    <img id="near-pic" src={trail4} alt="" />
+                                </Link>
+                            </div>
+                            <div id='near-bot'>
+                                <div className='near-trail'>
+                                    <div id="n-diff">Easy</div>
+                                    <div id="n-n">Twin Brooks Park Loop</div>
+                                    <div id="n-lo">USA - New York</div>
+                                    <div id="n-leng">Length: 2.5mi</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
                     </div>
 
             </div>

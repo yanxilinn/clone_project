@@ -135,6 +135,10 @@
     /* border: 5px solid white;  */
 }
 
+#tImg:hover{
+    animation: .1s 1 forwards scales; 
+}
+
 .trail1{
     width: 24%;
     border-radius: 35px;
