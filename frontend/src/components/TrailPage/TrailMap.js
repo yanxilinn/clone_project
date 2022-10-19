@@ -9,15 +9,19 @@ import './TrailMap.css';
 
 function TrailMap({ 
   trails, 
+  mapOptions = {}, 
+  mapEventHandlers = {}, 
+  markerEventHandlers = {}
 }) {
   const [map, setMap] = useState(null);
   const mapRef = useRef(null);
-//   const {trailId} = useParams();
-//   const trail = useSelector(getTrail(trailId));
+  // const markers = useRef({});
+  // const {trailId} = useParams();
+  // const trail = useSelector(getTrail(trailId));
 //   let lat = 0;
 //   let lng = 0;
-//   console.log(trail.longitude)
-//   console.log(trail.latitude)
+  // console.log(trail.longitude)
+  // console.log(trail.latitude)
 //   let lat = trail.latitude
 //   let lng = trail.longitude 
     
@@ -29,18 +33,39 @@ function TrailMap({
       setMap(new window.google.maps.Map(mapRef.current, {
         center: { 
             // lat: lat, lng: lng
-          lat: -73.9937891255057,
-          lng: 40.736287401994566
+          // lat: -73.9937891,
+          // lng: 40.7362874
+          lat: 37.773972,
+          lng: -122.431297
         }, 
-        zoom: 15,
+        zoom: 13,
         clickableIcons: false,
         disableDefaultUI: true,
+        ...mapOptions,
       }));
     }
   }, [mapRef, map]);
 
+    // Add event handlers to map
+    // useEffect(() => {
+    //   if (map) {
+    //     const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
+    //       window.google.maps.event.addListener(
+    //         map, 
+    //         event, 
+    //         (...args) => handler(...args, map)
+    //       )
+    //     );
+  
+    //     return () => listeners.forEach(window.google.maps.event.removeListener);
+    //   }
+    // }, [map, mapEventHandlers]);
+
+
+  
+
   return (
-    <div ref={mapRef} className="map1">
+    <div ref={mapRef} className="map">
       Map
     </div>
   );

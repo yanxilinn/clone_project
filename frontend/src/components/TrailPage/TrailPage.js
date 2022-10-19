@@ -1,6 +1,6 @@
 import './TrailsPage.css';
 import { Link } from 'react-router-dom';
-import search from './search.png';
+// import search from './search.png';
 import tImg1 from "./testTrail1.jpeg";
 // import tImg2 from "./testTrail2.jpeg" ; 
 // import tImg3 from "./testTrail3.jpeg" ;
@@ -21,7 +21,7 @@ import trail1 from '../HomePage/trail1.jpeg';
 import trail2 from '../HomePage/trail2.jpeg';
 import trail3 from '../HomePage/trail3.jpeg';
 import trail4 from '../HomePage/trail4.jpeg';
-import trail5 from '../HomePage/trail5.jpeg';
+// import trail5 from '../HomePage/trail5.jpeg';
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
@@ -37,20 +37,22 @@ const TrailsPage = () => {
     // const trailNum = trail.id; 
     // const picNum = "trail" + trailNum;
     // console.log(picNum);
+    // if (trail) console.log(trail.longitude);
+    // if (trail) console.log(trail.latitude);
  
     if (trail){
     return (
         <div className='trailPage'>
             <div className='tailPath'>
-                <div className='path1'>{trail.contry} - {trail.city}</div>
-                <div className='path2'>
+                {/* <div className='path1'>{trail.contry} - {trail.city}</div> */}
+                {/* <div className='path2'>
                     <div className='trailBox'>
                         <input id="path2" placeholder='Enter a city, park or trail name' />
                         <div id='search'>
                             <img id='searchPic' src={search} alt="search"></img>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>  
             <div className='trailPicPage'>
                 <div className='trailPic'>
@@ -165,18 +167,18 @@ const TrailsPage = () => {
                         </div>
                     </div>
                     <div className='right-col'>
-                        <div className='map'> 
-                        <TrailMap Map />
-                        </div>
-                        <p id='suggest-edit'>Suggest Edit</p>
-                        <div className='nearby'>
-                        <div id='nearby'>Nearby Trails</div>
-                        <div className='near'>
-                            <div id='near-top'>
-                                <Link to='/trails/1' >
-                                    <img id="near-pic" src={trail1} alt="" />
-                                </Link>
+                            <div className='map-box'> 
+                                <TrailMap trails={[trail]} mapOptions={{ center: { lat: trail.latitude, lng: trail.longitude }}} />
+                                <p id='suggest-edit'>Suggest Edit</p>
                             </div>
+                            <div className='nearby'>
+                                <div id='nearby'>Nearby Trails</div>
+                                <div className='near'>
+                                <div id='near-top'>
+                                    <Link to='/trails/1' >
+                                      <img id="near-pic" src={trail1} alt="" />
+                                    </Link>
+                                </div>
                             <div id='near-bot'>
                                 <div className='near-trail'>
                                     <div id="n-diff">Easy</div>
@@ -204,7 +206,7 @@ const TrailsPage = () => {
                         <div className='near'>
                             <div id='near-top'>
                                 <Link to='/trails/3' >
-                                    <img id="near-pic" src={trail3} alt="" />
+                                    <img id="near-pic" src={trail3} alt=""  />
                                 </Link>
                             </div>
                             <div id='near-bot'>
@@ -219,7 +221,7 @@ const TrailsPage = () => {
                         <div className='near'>
                             <div id='near-top'>
                                 <Link to='/trails/4' >
-                                    <img id="near-pic" src={trail4} alt="" />
+                                    <img id="near-pic" src={trail4} alt=""  />
                                 </Link>
                             </div>
                             <div id='near-bot'>

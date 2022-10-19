@@ -1,5 +1,6 @@
 import './HomePage.css';
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import dog from '../HomePage/dog.png';
 import hiking from '../HomePage/hiking.png';
@@ -14,6 +15,14 @@ import t1 from '../HomePage/trail1.jpeg';
 import t2 from '../HomePage/trail2.jpeg';
 import t3 from '../HomePage/trail3.jpeg';
 import t4 from '../HomePage/trail4.jpeg';
+import t5 from '../HomePage/trail5.jpeg';
+import t6 from '../HomePage/trail6.png';
+import t7 from '../HomePage/trail7.jpeg';
+import t8 from '../HomePage/trail8.webp';
+import mypic from '../HomePage/mypic.png';
+import github from '../HomePage/github.gif';
+import linkedin from '../HomePage/linkedin.gif'; 
+// import SearchBar from '../SearchBar';
 
 
 const HomePage = () => {   
@@ -40,73 +49,92 @@ const HomePage = () => {
 return (
     <div className='home'>
         <div className='homepage-bg' > 
-        <div id='hello'>
-            { helloMessage }
-        </div>
+        <div id='hello'>{ helloMessage }</div>
  
-        <div className='search-home'>
+        {/* <div className='search-home'> */}
             
-           <img id="search" src={search} alt=""/> 
-          <input className='bar' placeholder=' Search by city, park, or trail name' />
-          <img id="click" src={click} alt=""/> 
-          {/* <button className="search-button" to='/'>SEARCH</button> */}
-        </div>
+          {/* <img id="search" src={search} alt=""/>  */}
+          {/* <input className='bar' placeholder=' Search by city, park, or trail name' > */}
+            {/* SearchBar */}
+            {/* <ul id="searchList"></ul> */}
+            {/* </input> */}
+          {/* <img id="click" src={click} alt=""/>  */}
+        {/* </div> */}
+            </div>
         <div className='block1'>
              <div className='home-show'>
             <div className='title'>
                 <div id="title">Local favorites in New York</div>
-            </div>
                 <div className='show-pic'>
-                    <div className='trail1'>
-                            <Link to='/trails/1' >
-                                <img id="tImg" src={t1} alt="" />
-                            </Link>
-                    </div>
-                    <div className='trail2'>
-                            <Link to='/trails/2' >
-                                <img id="tImg" src={t2} alt="" />
-                            </Link>
-                    </div>
-                    <div className='trail3'>
-                            <Link to='/trails/3' >
-                                <img id="tImg" src={t3} alt="" />
-                            </Link>
-                    </div>
-                    <div className='trail4'>
-                            <Link to='/trails/4' >
-                                <img id="tImg" src={t4} alt="" />
-                            </Link>
-                    </div>
+                    <div className='trail1'><Link to='/trails/1' ><img id="tImg" src={t1} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/2' ><img id="tImg" src={t2} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/3' ><img id="tImg" src={t3} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/4' ><img id="tImg" src={t4} alt="" /></Link></div>
                 </div>
                 <div className='show-text'>
                     <div className='trai1'>
-                        <div id="t1-diff">easy</div>
-                        <div id="t1-n">Mount Tamalpais State Trail</div>
-                        <div id="t1-lo">USA - New York</div>
-                        <div id="t1-leng">Length: 8.4mi</div>
+                        <div id="diff-easy">easy</div>
+                        <div id="t-n">Mount Tamalpais State Trail</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 8.4mi</div>
                     </div>
                     <div className='trai2'>
-                        <div id="t2-diff">hard</div>
-                        <div id="t2-n">East and West Drive Loop</div>
-                        <div id="t2-lo">USA - New York</div>
-                        <div id="t2-leng">Length: 6.1mi</div>
+                        <div id="diff-hard">hard</div>
+                        <div id="t-n">East and West Drive Loop</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 6.1mi</div>
                     </div>
                     <div className='trai3'>
-                        <div id="t3-diff">moderate</div>
-                        <div id="t3-n">Jennings Beach To Pine Creek Point Trail</div>
-                        <div id="t3-lo">USA - New York</div>
-                        <div id="t3-leng">Length: 4.9mi</div>
+                        <div id="diff-mod">moderate</div>
+                        <div id="t-n">Jennings Beach To Pine Creek Point Trail</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 4.9mi</div>
                     </div>
                     <div className='trai4'>
-                        <div id="t4-diff">easy</div>
-                        <div id="t4-n">Twin Brooks Park Loop</div>
-                        <div id="t4-lo">USA - New York</div>
-                        <div id="t4-leng">Length: 2.5mi</div>
+                        <div id="diff-easy">easy</div>
+                        <div id="t-n">Twin Brooks Park Loop</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 2.5mi</div>
+                    </div>
+                </div>
+             </div>
+             <div className='title'>
+                <div id="title">Best Trail in New York</div>
+                <div className='show-pic'>
+                    <div className='trail1'><Link to='/trails/5' ><img id="tImg" src={t5} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/6' ><img id="tImg" src={t6} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/7' ><img id="tImg" src={t7} alt="" /></Link></div>
+                    <div className='trail1'><Link to='/trails/8' ><img id="tImg" src={t8} alt="" /></Link></div>
+                </div>
+                <div className='show-text'>
+                    <div className='trai1'>
+                        <div id="diff-mod">moderate</div>
+                        <div id="t-n">Teepee to Thrilla to Viper to IMBA Loop</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 4.9mi</div>
+                    </div>
+                    <div className='trai2'>
+                        <div id="diff-easy">easy</div>
+                        <div id="t-n">Forest Park Loop</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 2.3mi</div>
+                    </div>
+                    <div className='trai3'>
+                        <div id="diff-mod">moderate</div>
+                        <div id="t-n">Alley Pond Park Loop</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 3.2mi</div>
+                    </div>
+                    <div className='trai4'>
+                        <div id="diff-easy">easy</div>
+                        <div id="t-n">Joe Michaels Mile</div>
+                        <div id="t-l">USA - New York</div>
+                        <div id="t-l">Length: 5mi</div>
                     </div>
                 </div>
              </div>
         </div>
-
+</div>
 
         <div className='block2'>
         <div className='block3'>
@@ -142,12 +170,16 @@ return (
                 <Link id='signup' to="/signup">Sign Up</Link>
             </div>
         </div>
+        
         </div>
+        <div id='line' />
         <div className='block5'>
             <div id="about">About Me</div>
-        </div>
-
-
+            <div id="myPic"> 
+            <img id="mypic" src={mypic} /> 
+            <a href="https://github.com/yanxilinn/clone_project.git" target="_blank" rel="noopener noreferrer"> <img id='l' src={github} /> </a> 
+            <a href="https://www.linkedin.com/in/yanxi-lin-363959145" target="_blank" rel="noopener noreferrer"> <img id='l' src={linkedin} /> </a>
+            </div>
         </div>
     </div>
 );
