@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import LoginForm from './LoginForm';
+import '../ReviewModal/Review.css';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchTrail, getTrail } from '../../store/trail';
+import Review from '../ReviewModal/Review';
+import ReviewForm from '../ReviewModal/Review';
 
-function LoginFormModal() {
+function ReviewModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
+      <button onClick={() => setShowModal(true)}>Write review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
+          <ReviewForm />
         </Modal>
       )}
     </>
   );
 }
 
-export default LoginFormModal;
+export default ReviewModal;

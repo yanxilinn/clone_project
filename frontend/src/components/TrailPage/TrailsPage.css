@@ -540,7 +540,7 @@
 }
 
 .map-box{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     min-height: 350px;
     width: 90%;
     /* min-width: 220px; */
@@ -552,7 +552,7 @@
 }
 
 #suggest-edit{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 80%;
     /* margin-left: 2px; */
     font-family: Proxima Nova,Arial,sans-serif;

@@ -1,61 +1,58 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
-import "./LoginForm.css";
+import { useDispatch, useSelector } from "react-redux";
+import ReviewModal from '../ReviewModal/Review'; 
+import "../ReviewModal/Review.css";
+import { getTrail } from "../../store/trail";
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchTrail } from "../../store/trail";
 
-function LoginForm() {
+function ReviewForm() {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+  const {trailId} = useParams();
+  const [review, setReview] = useState("");
+  const [errors, setErrors] = useState("");
+  const trail = useSelector(getTrail(trailId));
+  // const name = trail.tName;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ email, password }))
+    return dispatch(fetchTrail(trailId))
       .catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if, e.g., server is down
+          data = await res.text();     
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
-      });
-  };
+      })
+    };
 
   return (
     <>
-      <h1>Log In</h1>
+      <h1 className="review-trail">{trail.tName}</h1>
       <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
-        <label>
-          Email
-          <input
+        <div className="review-box2">
+          <textarea 
+            className="review-input"
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Give back to the community. Share your thoughts about the trail so others want to expect."
+            value={review}
+            onChange={(e) => setReview(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Log In</button>
+        </div>
+        <div className="review-next">
+        <button id="review-next" type="Next">Next</button>
+        </div>
       </form>
     </>
   );
-}
+};
 
-export default LoginForm;
+export default ReviewForm;

@@ -31,8 +31,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Mount Tamalpais State Trail', 
       length: '8.4',
-      longitude: '-122.6108', 
-      latitude: '37.8890', 
+      longitude: '-122.61119506209867', 
+      latitude: '37.889304787838924', 
       difficulty_level: 'easy', 
       elevation_gain: '351ft', 
       estimated_time: '2h', 
@@ -44,7 +44,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'East and West Drive Loop', 
       length: '6.1',
-      longitude: '-122.4997', 
+      longitude: '-130', 
       latitude: '37.8262', 
       difficulty_level: 'hard', 
       elevation_gain: '285ft', 
@@ -57,7 +57,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Jennings Beach To Pine Creek Point Trail', 
       length: '4.9',
-      longitude: '-122.4997', 
+      longitude: '-50.4997', 
       latitude: '37.8262', 
       difficulty_level: 'moderate', 
       elevation_gain: '29ft', 
@@ -70,7 +70,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Twin Brooks Park Loop', 
       length: '2.5',
-      longitude: '-122.4997', 
+      longitude: '60.4997', 
       latitude: '37.8262', 
       difficulty_level: 'easy', 
       elevation_gain: '314ft', 
@@ -83,7 +83,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Teepee to Thrilla to Viper to IMBA Loop', 
       length: '4.9',
-      longitude: '-122.4997', 
+      longitude: '-12.4997', 
       latitude: '37.8262', 
       difficulty_level: 'moderate', 
       elevation_gain: '167ft', 
@@ -96,7 +96,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Forest Park Loop', 
       length: '2.3',
-      longitude: '-122.4997', 
+      longitude: '-22.4997', 
       latitude: '37.8262', 
       difficulty_level: 'easy', 
       elevation_gain: '131ft', 
@@ -109,7 +109,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Alley Pond Park Loop', 
       length: '3.2',
-      longitude: '-122.4997', 
+      longitude: '22.4997', 
       latitude: '37.8262', 
       difficulty_level: 'moderate', 
       elevation_gain: '219', 
@@ -122,7 +122,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Joe Michaels Mile', 
       length: '5',
-      longitude: '-122.4997', 
+      longitude: '132.4997', 
       latitude: '37.8262', 
       difficulty_level: 'easy', 
       elevation_gain: '82ft', 
@@ -135,7 +135,7 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Pelham Bay Park and Pelham Parkway', 
       length: '6.7',
-      longitude: '-122.4997', 
+      longitude: '-49.97', 
       latitude: '37.8262', 
       difficulty_level: 'easy', 
       elevation_gain: '193ft', 
@@ -158,19 +158,14 @@ ApplicationRecord.transaction do
       city: 'NY', 
       park_id: '10' )
 
+    Review.create!(
+      user_id: 1,
+      trail_id: 1,
+      rating: 5,
+      review: "This is a test review for trail 1",
+      date: "2022-10-19"
+    )
 
-    
-    
-    # More users
-    # 10.times do 
-    #   User.create!({
-    #     first_name: Faker::Name.first_name,
-    #     last_name: Faker::Name.last_name,
-    #     email: Faker::Internet.unique.email,
-    #     password: 'password',
-    #     bio: 'I am demo user :)'
-    #   }) 
-    # end
   
     puts "Done!"
   end

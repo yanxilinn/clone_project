@@ -14,14 +14,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchTrail, getTrail } from '../../store/trail';
-// import GoogleMapReact from 'google-map-react';  
-// import { Wrapper } from "@googlemaps/react-wrapper";
 import TrailMap from '../TrailPage/TrailMap.js';
 import trail1 from '../HomePage/trail1.jpeg';
 import trail2 from '../HomePage/trail2.jpeg';
 import trail3 from '../HomePage/trail3.jpeg';
 import trail4 from '../HomePage/trail4.jpeg';
+import location from '../TrailPage/location.png'; 
 // import trail5 from '../HomePage/trail5.jpeg';
+import ReviewModal from '../ReviewModal'; 
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
@@ -36,7 +36,7 @@ const TrailsPage = () => {
 
     // const trailNum = trail.id; 
     // const picNum = "trail" + trailNum;
-    // console.log(picNum);
+    // console.log(trailNum);
     // if (trail) console.log(trail.longitude);
     // if (trail) console.log(trail.latitude);
  
@@ -165,10 +165,16 @@ const TrailsPage = () => {
                             <img id="weather" src={weather} alt="" /> 
                             </div>
                         </div>
+
+                        <div className='review'>
+                            <ReviewModal />    
+                        </div>
+
                     </div>
                     <div className='right-col'>
                             <div className='map-box'> 
                                 <TrailMap trails={[trail]} mapOptions={{ center: { lat: trail.latitude, lng: trail.longitude }}} />
+                                <img id="location-poiter" src={location} alt=""  />
                                 <p id='suggest-edit'>Suggest Edit</p>
                             </div>
                             <div className='nearby'>

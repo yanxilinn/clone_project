@@ -21,7 +21,7 @@ class Trail < ApplicationRecord
     #     through: :trail_tags,
     #     source: :tag
 
-    # has_many :reviews
+    has_many :reviews
 
     # has_many_attached :photos, dependent: :purge_later
 end
