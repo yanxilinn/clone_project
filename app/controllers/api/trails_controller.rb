@@ -11,7 +11,8 @@ class Api::TrailsController < ApplicationController
 
     def index
         # include associations with .includes
-        @trails = Trail.all
+        # @trails = Trail.all
+        @trails = Trail.includes(:reviews)
         render :index
     end
 

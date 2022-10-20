@@ -1,4 +1,6 @@
 class Api::ReviewsController < ApplicationController
+    before_action :require_logged_in
+    wrap_parameters include: Review.attribute_names + [:trailId]
 
     def index
         @reviews = Review.where(trail_id: params[:trail_id])

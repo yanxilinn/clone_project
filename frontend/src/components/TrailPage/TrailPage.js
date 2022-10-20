@@ -1,9 +1,6 @@
 import './TrailsPage.css';
 import { Link } from 'react-router-dom';
-// import search from './search.png';
 import tImg1 from "./testTrail1.jpeg";
-// import tImg2 from "./testTrail2.jpeg" ; 
-// import tImg3 from "./testTrail3.jpeg" ;
 import icon1 from "./icon1.png";
 import icon2 from "./icon2.png";
 import icon3 from "./icon3.png";
@@ -20,7 +17,6 @@ import trail2 from '../HomePage/trail2.jpeg';
 import trail3 from '../HomePage/trail3.jpeg';
 import trail4 from '../HomePage/trail4.jpeg';
 import location from '../TrailPage/location.png'; 
-// import trail5 from '../HomePage/trail5.jpeg';
 import ReviewModal from '../ReviewModal'; 
 
 const TrailsPage = () => {

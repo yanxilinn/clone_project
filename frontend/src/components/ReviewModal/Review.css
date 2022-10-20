@@ -1,3 +1,45 @@
+.review-block{
+    /* border: 2px solid black; */
+    height: 200px;
+    margin-top: 2%;
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
+    border-bottom: 1px solid gray;
+}
+
+#review-block{
+    /* border: 2px solid black; */
+    height: 25px;
+    font-weight: bold;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgb(43, 41, 41);
+    padding-left: 25px;
+    border-bottom: 1px solid gray;
+}
+
+.review-submit{
+    /* border: 2px solid black; */
+    height: 110px;
+    display: flex;
+    justify-content: end;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+#r-b{
+    /* border: 2px solid black; */
+    height: 50%;
+    width: 250px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 35px;
+    background-color: #428a13;
+}
+
 .review-trail{
     /* border: 3px solid red ;  */
     margin-top: 10%;

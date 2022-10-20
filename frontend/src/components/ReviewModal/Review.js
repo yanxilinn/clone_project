@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ReviewModal from '../ReviewModal/Review'; 
 import "../ReviewModal/Review.css";
 import { getTrail } from "../../store/trail";
+import {createReview} from '../../store/review';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchTrail } from "../../store/trail";
@@ -15,6 +16,7 @@ function ReviewForm() {
   const [errors, setErrors] = useState("");
   const trail = useSelector(getTrail(trailId));
   // const name = trail.tName;
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,12 +45,12 @@ function ReviewForm() {
             type="text"
             placeholder="Give back to the community. Share your thoughts about the trail so others want to expect."
             value={review}
-            onChange={(e) => setReview(e.target.value)}
+            onChange={(e) => createReview(e.target.value)}
             required
           />
         </div>
         <div className="review-next">
-        <button id="review-next" type="Next">Next</button>
+        <button id="review-next" type="Next" >Next</button>
         </div>
       </form>
     </>
