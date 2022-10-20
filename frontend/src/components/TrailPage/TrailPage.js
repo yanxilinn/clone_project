@@ -25,10 +25,12 @@ const TrailsPage = () => {
     const dispatch = useDispatch();
     const {trailId} = useParams();
     const trail = useSelector(getTrail(trailId));
-    const reviews = useSelector(getReviews)
+    const reviews = useSelector(getReviews);
+    console.log(reviews);
     const reviewList = reviews.map((review) => {
+        
         return (
-            <>
+            <div key={review.id}>
                 <div className='review-info'>
                     <img src={head} />
                     <div className='review-user'>
@@ -39,7 +41,7 @@ const TrailsPage = () => {
                 <div className='review-body'>
                     {review.body}
                 </div>
-            </>
+            </div>
         )
     })
 

@@ -44,8 +44,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'East and West Drive Loop', 
       length: '6.1',
-      longitude: '-130', 
-      latitude: '37.8262', 
+      longitude: '-73.96818423158918', 
+      latitude: '40.78352506887827', 
       difficulty_level: 'hard', 
       elevation_gain: '285ft', 
       estimated_time: '4h', 
@@ -57,8 +57,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Jennings Beach To Pine Creek Point Trail', 
       length: '4.9',
-      longitude: '-50.4997', 
-      latitude: '37.8262', 
+      longitude: '-73.26179481481698', 
+      latitude: '41.124958210355544', 
       difficulty_level: 'moderate', 
       elevation_gain: '29ft', 
       estimated_time: '1h', 
@@ -70,8 +70,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Twin Brooks Park Loop', 
       length: '2.5',
-      longitude: '60.4997', 
-      latitude: '37.8262', 
+      longitude: '-73.18630074430955', 
+      latitude: '41.24509173302865', 
       difficulty_level: 'easy', 
       elevation_gain: '314ft', 
       estimated_time: '1h', 
@@ -83,8 +83,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Teepee to Thrilla to Viper to IMBA Loop', 
       length: '4.9',
-      longitude: '-12.4997', 
-      latitude: '37.8262', 
+      longitude: '-87.63176816126384', 
+      latitude: '41.88285923018811', 
       difficulty_level: 'moderate', 
       elevation_gain: '167ft', 
       estimated_time: '2h', 
@@ -96,8 +96,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Forest Park Loop', 
       length: '2.3',
-      longitude: '-22.4997', 
-      latitude: '37.8262', 
+      longitude: '-73.84655581020965', 
+      latitude: '40.70415637732048', 
       difficulty_level: 'easy', 
       elevation_gain: '131ft', 
       estimated_time: '3h', 
@@ -109,8 +109,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Alley Pond Park Loop', 
       length: '3.2',
-      longitude: '22.4997', 
-      latitude: '37.8262', 
+      longitude: '-73.74540474597653', 
+      latitude: '40.75608659681447', 
       difficulty_level: 'moderate', 
       elevation_gain: '219', 
       estimated_time: '1h', 
@@ -122,8 +122,8 @@ ApplicationRecord.transaction do
     Trail.create!(
       t_name: 'Joe Michaels Mile', 
       length: '5',
-      longitude: '132.4997', 
-      latitude: '37.8262', 
+      longitude: '-73.77258770362049', 
+      latitude: '40.78390207932417', 
       difficulty_level: 'easy', 
       elevation_gain: '82ft', 
       estimated_time: '1.5h', 
@@ -162,7 +162,7 @@ ApplicationRecord.transaction do
       user_id: 1,
       trail_id: 1,
       rating: 5,
-      review: "This is a test review for trail 1",
+      body: "This is a test review for trail 1",
       date: "2022-10-19"
     )
 

@@ -39,10 +39,10 @@ export const createReview = (review) => async dispatch => {
 
 export const fetchReviews = (trailId) => async dispatch => {
   const response = await csrfFetch(`/api/trails/${trailId}/reviews`)
+  // debugger
   
   if (response.ok) {
     const data = await response.json();
-    // debugger
     dispatch(addReviews(data));
   }
 }

@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-    before_action :require_logged_in
+    before_action :require_logged_in, only: [:create, :destroy, :update]
     wrap_parameters include: Review.attribute_names + [:trailId, :userId]
 
     def index
