@@ -43,7 +43,6 @@ const HomePage = () => {
     let textState = getTimeState();
     const sessionUser = useSelector(state => state.session.user);
     const helloMessage = (sessionUser) ? `${textState} ${sessionUser.firstName}` : 'Find your next trail'
-
     
 
 return (

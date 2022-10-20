@@ -89,4 +89,5 @@
     font-size: larger;
     border: 1px solid white; 
     border-radius: 40px;
+    cursor: pointer;
 }

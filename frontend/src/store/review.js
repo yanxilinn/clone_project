@@ -13,6 +13,8 @@ export const addReviews = reviews => ({
   payload: reviews
 });
 
+export const getReviews = ({reviews}) => ( reviews ? Object.values(reviews) : [])
+
 export const getTrailReviews = trailId => state => (
   Object.values(state.reviews)
         .filter(review => review.trailId === trailId)
@@ -23,26 +25,41 @@ export const getTrailReviews = trailId => state => (
 );
 
 export const createReview = (review) => async dispatch => {
-  const response = await csrfFetch("/api/reviews", {
+  const response = await csrfFetch(`/api/trails/${review.trailId}/reviews`, {
     method: "POST",
     body: JSON.stringify(review)
   });
   const data = await response.json();
-  dispatch(addReview(data.review));
-  dispatch(addUser(data.user));
-  dispatch(addTrail(data.trail));
+  // debugger
+  dispatch(addReview(data));
+  // dispatch(addUser(data.user));
+  // dispatch(addTrail(data.trail));
   return response;
 };
 
+export const fetchReviews = (trailId) => async dispatch => {
+  const response = await csrfFetch(`/api/trails/${trailId}/reviews`)
+  
+  if (response.ok) {
+    const data = await response.json();
+    // debugger
+    dispatch(addReviews(data));
+  }
+}
+
 function reviewsReducer(state = {}, action) {
+  Object.freeze(state);
+  const nextState = {...state};
+
   switch (action.type) {
     case ADD_REVIEW: {
-      const review = action.payload;
-      return { ...state, [review.id]: review };
+      nextState[action.payload.id] = action.payload
+      return nextState;
     }
     case ADD_REVIEWS:
-      const reviews = action.payload;
-      return { ...state, ...reviews };
+      // debugger
+      if (!action.payload) return state;
+      return action.payload;
     default:
       return state;
   }

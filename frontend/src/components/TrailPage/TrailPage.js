@@ -18,17 +18,41 @@ import trail3 from '../HomePage/trail3.jpeg';
 import trail4 from '../HomePage/trail4.jpeg';
 import location from '../TrailPage/location.png'; 
 import ReviewModal from '../ReviewModal'; 
+import reviewsReducer, { fetchReviews, getReviews } from '../../store/review';
+import head from "../TrailPage/review-icon.png";
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
     const {trailId} = useParams();
     const trail = useSelector(getTrail(trailId));
+    const reviews = useSelector(getReviews)
+    const reviewList = reviews.map((review) => {
+        return (
+            <>
+                <div className='review-info'>
+                    <img src={head} />
+                    <div className='review-user'>
+                        <div id='re-user'>{review.firstName} &nbsp; {review.lastName}</div>
+                        <div id='re-date'>{review.date}</div>
+                    </div>
+                </div>
+                <div className='review-body'>
+                    {review.body}
+                </div>
+            </>
+        )
+    })
+
     // const trails = useSelector(getTrails);
     // console.log(trail);
     useEffect (() => {
         // dispatch(fetchTrails());
         dispatch(fetchTrail(trailId));
+        dispatch(fetchReviews(trailId));
+        // debugger
     }, [dispatch, trailId]);
+
+    
 
     // const trailNum = trail.id; 
     // const picNum = "trail" + trailNum;
@@ -154,16 +178,20 @@ const TrailsPage = () => {
                             <div id='condition1'>No conditions reported in the past 7 days</div>
                             <div id='condition2'>Want to report conditions for this trail? Write a review to inform other visitors!</div>
                         </div>
-
                         <div className='weather'>
                             <div id='w'><div id='w-t'> Weather </div></div>
                             <div id='weather'>
                             <img id="weather" src={weather} alt="" /> 
                             </div>
                         </div>
-
                         <div className='review'>
                             <ReviewModal />    
+                        </div>
+                        <div className='review-post'>
+                            <div className='block' />
+                            <div className='re-box'>
+                                {reviewList}
+                            </div>
                         </div>
 
                     </div>

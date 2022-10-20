@@ -2,8 +2,10 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import trails from './trail';
+import reviews from './review';
 
 const rootReducer = combineReducers({
+  reviews,
   trails,
   session
 });

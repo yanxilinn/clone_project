@@ -20,7 +20,7 @@ function ReviewModal() {
       <button id="r-b" onClick={() => setShowModal(true)}>Write review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <ReviewForm />
+          <ReviewForm closeForm={() => setShowModal(false)} />
         </Modal>
       )}
       </div>

@@ -1,14 +1,19 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in
-    wrap_parameters include: Review.attribute_names + [:trailId]
+    wrap_parameters include: Review.attribute_names + [:trailId, :userId]
 
     def index
-        @reviews = Review.where(trail_id: params[:trail_id])
+        # debugger
+        trail = Trail.find_by(id: params[:trail_id])
+        @reviews = trail.reviews
+        # @reviews = Review.where(trail_id: params[:trail_id])
         render :index
     end
 
     def create
         @review = Review.new(review_params)
+        @review.rating = 5
+        @review.date = Date.today
         if @review.save!
             render :show
         else
@@ -42,6 +47,6 @@ class Api::ReviewsController < ApplicationController
     private
     
     def review_params
-        params.require(:review).permit(:id, :user_id, :trail_id, :rating, :review, :date)
+        params.require(:review).permit(:id, :user_id, :trail_id, :rating, :body, :date)
     end
 end
