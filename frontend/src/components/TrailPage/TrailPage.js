@@ -1,6 +1,5 @@
 import './TrailsPage.css';
 import { Link } from 'react-router-dom';
-import tImg1 from "./testTrail1.jpeg";
 import icon1 from "./icon1.png";
 import icon2 from "./icon2.png";
 import icon3 from "./icon3.png";
@@ -12,10 +11,16 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchTrail, getTrail } from '../../store/trail';
 import TrailMap from '../TrailPage/TrailMap.js';
-import trail1 from '../HomePage/trail1.jpeg';
-import trail2 from '../HomePage/trail2.jpeg';
-import trail3 from '../HomePage/trail3.jpeg';
-import trail4 from '../HomePage/trail4.jpeg';
+import t1 from '../HomePage/trail1.jpeg';
+import t2 from '../HomePage/trail2.jpeg';
+import t3 from '../HomePage/trail3.jpeg';
+import t4 from '../HomePage/trail4.jpeg';
+import t5 from '../HomePage/trail5.jpeg';
+import t6 from '../HomePage/trail6.png';
+import t7 from '../HomePage/trail7.jpeg';
+import t8 from '../HomePage/trail8.webp';
+import t9 from '../HomePage/trail9.jpeg';
+import t10 from '../HomePage/trail10.jpeg';
 import location from '../TrailPage/location.png'; 
 import ReviewModal from '../ReviewModal'; 
 import reviewsReducer, { fetchReviews, getReviews } from '../../store/review';
@@ -55,7 +60,7 @@ const TrailsPage = () => {
     }, [dispatch, trailId]);
 
     
-
+    // const trailPic = "t" + trailId; 
     // const trailNum = trail.id; 
     // const picNum = "trail" + trailNum;
     // console.log(trailNum);
@@ -95,7 +100,17 @@ const TrailsPage = () => {
                         <div id='location'>{trail.contry} -  {trail.city}</div>
                     </div>
                     <div className="imgList">
-                        <img id="img" src={tImg1} alt="" />
+                        {trail.id == 1 && <img id="img" src={t1} alt="" />}
+                        {trail.id == 2 && <img id="img" src={t2} alt="" />}
+                        {trail.id == 3 && <img id="img" src={t3} alt="" />}
+                        {trail.id == 4 && <img id="img" src={t4} alt="" />}
+                        {trail.id == 5 && <img id="img" src={t5} alt="" />}
+                        {trail.id == 6 && <img id="img" src={t6} alt="" />}
+                        {trail.id == 7 && <img id="img" src={t7} alt="" />}
+                        {trail.id == 8 && <img id="img" src={t8} alt="" />}
+                        {trail.id == 9 && <img id="img" src={t9} alt="" />}
+                        {trail.id == 10 && <img id="img" src={t10} alt="" />}
+                        {/* <img id="img" src={tImg1} alt="" /> */}
                     </div>
                 </div>
                 <div className='trailPic2'>
@@ -208,7 +223,7 @@ const TrailsPage = () => {
                                 <div className='near'>
                                 <div id='near-top'>
                                     <Link to='/trails/1' >
-                                      <img id="near-pic" src={trail1} alt="" />
+                                      <img id="near-pic" src={t1} alt="" />
                                     </Link>
                                 </div>
                             <div id='near-bot'>
@@ -223,7 +238,7 @@ const TrailsPage = () => {
                         <div className='near'>
                             <div id='near-top'>
                                 <Link to='/trails/2' >
-                                    <img id="near-pic" src={trail2} alt="" />
+                                    <img id="near-pic" src={t2} alt="" />
                                 </Link>
                             </div>
                             <div id='near-bot'>
@@ -238,7 +253,7 @@ const TrailsPage = () => {
                         <div className='near'>
                             <div id='near-top'>
                                 <Link to='/trails/3' >
-                                    <img id="near-pic" src={trail3} alt=""  />
+                                    <img id="near-pic" src={t3} alt=""  />
                                 </Link>
                             </div>
                             <div id='near-bot'>
@@ -253,7 +268,7 @@ const TrailsPage = () => {
                         <div className='near'>
                             <div id='near-top'>
                                 <Link to='/trails/4' >
-                                    <img id="near-pic" src={trail4} alt=""  />
+                                    <img id="near-pic" src={t4} alt=""  />
                                 </Link>
                             </div>
                             <div id='near-bot'>

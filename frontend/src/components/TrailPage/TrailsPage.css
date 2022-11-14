@@ -147,6 +147,8 @@
     /* animation:rolling 50s linear infinite; */
     position: absolute;
     display: center;
+    /* border: 2px solid green;  */
+    width: 100%;
     /* z-index: -1; */
 }
 
