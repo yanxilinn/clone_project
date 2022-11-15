@@ -22,11 +22,11 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find(params[:id])
-        if @review
-            @review.destroy
+        @review = Review.find(id: params[:id])
+        if @review && @review.delete
+            render json: {success: ["Successfully Deleted Review"]}
         else
-            render json: @review.errors.full_messages, status: 401
+            render json: {error: ["Failed to Delete"]}
         end
     end
 
@@ -35,7 +35,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render :show
         else
-            render json: ['Can\'t update'], status: 401
+            render json: ['Can not update'], status: 401
         end
     end
 

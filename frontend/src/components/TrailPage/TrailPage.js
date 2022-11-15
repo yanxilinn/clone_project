@@ -23,7 +23,9 @@ import t9 from '../HomePage/trail9.jpeg';
 import t10 from '../HomePage/trail10.jpeg';
 import location from '../TrailPage/location.png'; 
 import ReviewModal from '../ReviewModal'; 
-import reviewsReducer, { fetchReviews, getReviews } from '../../store/review';
+import handleWriteReivew from '../ReviewModal'
+// import reviewsReducer, { fetchReviews, getReviews, getReview} from '../../store/review';
+import reviewsReducer, { fetchReviews, getReviews, getReview, deleteReview } from '../../store/review';
 import head from "../TrailPage/review-icon.png";
 
 const TrailsPage = () => {
@@ -31,7 +33,12 @@ const TrailsPage = () => {
     const {trailId} = useParams();
     const trail = useSelector(getTrail(trailId));
     const reviews = useSelector(getReviews);
+    const sessionUser = useSelector(state => state.session.user);
     console.log(reviews);
+    const handleDelete = (e) => {
+        e.preventDefault();
+        dispatch(deleteReview(trailId));
+    }
     const reviewList = reviews.map((review) => {
         
         return (
@@ -45,6 +52,12 @@ const TrailsPage = () => {
                 </div>
                 <div className='review-body'>
                     {review.body}
+                    {sessionUser.id == review.userId && 
+                    <>
+                    <button>Edit </button>
+                    <button className='deleteButton' onClick={handleDelete}>Delete</button>
+                    </>
+                    }
                 </div>
             </div>
         )
@@ -59,6 +72,7 @@ const TrailsPage = () => {
         // debugger
     }, [dispatch, trailId]);
 
+   
     
     // const trailPic = "t" + trailId; 
     // const trailNum = trail.id; 

@@ -2,8 +2,9 @@ import csrfFetch from "./csrf.js";
 
 const ADD_REVIEW = 'reviews/addReview';
 const ADD_REVIEWS = 'reviews/addReviews';
+const REMOVE_REVIEW = 'reviews/deleteReview';
 
-const addReview = review => ({
+export const addReview = review => ({
   type: ADD_REVIEW,
   payload: review
 });
@@ -13,7 +14,13 @@ export const addReviews = reviews => ({
   payload: reviews
 });
 
-export const getReviews = ({reviews}) => ( reviews ? Object.values(reviews) : [])
+export const removeReview = (reviewId) => ({
+  type: REMOVE_REVIEW,
+  payload: reviewId
+});
+
+export const getReviews = ({reviews}) => ( reviews ? Object.values(reviews) : []);
+export const getReview = (reviewId) => ({reviews}) => (reviews ? reviews[reviewId] : null);
 
 export const getTrailReviews = trailId => state => (
   Object.values(state.reviews)
@@ -36,6 +43,16 @@ export const createReview = (review) => async dispatch => {
   // dispatch(addTrail(data.trail));
   return response;
 };
+
+export const deleteReview = (reviewId) => async dispatch => {
+  const response = await csrfFetch(`/api/trails/${reviewId.trailId}/reviews`, {
+      method: 'DELETE'
+  })
+  if (response.ok) {
+      dispatch(removeReview(reviewId));
+  }
+}
+
 
 export const fetchReviews = (trailId) => async dispatch => {
   const response = await csrfFetch(`/api/trails/${trailId}/reviews`)
@@ -60,6 +77,10 @@ function reviewsReducer(state = {}, action) {
       // debugger
       if (!action.payload) return state;
       return action.payload;
+    case REMOVE_REVIEW:
+      delete nextState[action.reviewId];
+      return nextState;
+    
     default:
       return state;
   }
