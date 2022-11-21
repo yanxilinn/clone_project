@@ -32,14 +32,23 @@ const TrailsPage = () => {
     const dispatch = useDispatch();
     const {trailId} = useParams();
     const trail = useSelector(getTrail(trailId));
-    const reviews = useSelector(getReviews);
+    let reviews = useSelector(getReviews);
+    // const review = useSelector(getReview);
     const sessionUser = useSelector(state => state.session.user);
-    console.log(reviews);
-    const handleDelete = (e) => {
-        e.preventDefault();
-        dispatch(deleteReview(trailId));
-    }
+    
     const reviewList = reviews.map((review) => {
+        const handleDelete = (e) => {
+            e.preventDefault();
+            dispatch(deleteReview(trailId, review.id));
+            // debugger;
+            // dispatch(fetchReviews(trailId));
+            // dispatch(fetchTrail(trailId));
+            // debugger;
+            // console.log(review.id);
+            // dispatch(deleteReview(trailId));
+            // dispatch(deleteReview);
+            
+        }
         
         return (
             <div key={review.id}>
@@ -54,7 +63,7 @@ const TrailsPage = () => {
                     {review.body}
                     {sessionUser.id == review.userId && 
                     <>
-                    <button>Edit </button>
+                <button className='editButton' >Edit </button>
                     <button className='deleteButton' onClick={handleDelete}>Delete</button>
                     </>
                     }
@@ -63,8 +72,6 @@ const TrailsPage = () => {
         )
     })
 
-    // const trails = useSelector(getTrails);
-    // console.log(trail);
     useEffect (() => {
         // dispatch(fetchTrails());
         dispatch(fetchTrail(trailId));
@@ -72,14 +79,6 @@ const TrailsPage = () => {
         // debugger
     }, [dispatch, trailId]);
 
-   
-    
-    // const trailPic = "t" + trailId; 
-    // const trailNum = trail.id; 
-    // const picNum = "trail" + trailNum;
-    // console.log(trailNum);
-    // if (trail) console.log(trail.longitude);
-    // if (trail) console.log(trail.latitude);
  
     if (trail){
     return (
@@ -127,7 +126,7 @@ const TrailsPage = () => {
                         {/* <img id="img" src={tImg1} alt="" /> */}
                     </div>
                 </div>
-                <div className='trailPic2'>
+                {/* <div className='trailPic2'>
                     <div className='trailIcon'>
                     <p className='icon1'> 
                         <img id="icon1" src={icon1} alt="" /> 
@@ -152,7 +151,7 @@ const TrailsPage = () => {
                         <div id='itext4'>Share</div>
                         <div id='itext5'>More</div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className='content'>
                     <div className='left-col'>

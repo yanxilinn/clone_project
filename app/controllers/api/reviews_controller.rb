@@ -22,7 +22,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find(id: params[:id])
+        @review = Review.find_by(id: params[:id])
         if @review && @review.delete
             render json: {success: ["Successfully Deleted Review"]}
         else

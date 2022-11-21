@@ -1,8 +1,8 @@
 import csrfFetch from "./csrf.js";
 
-const ADD_REVIEW = 'reviews/addReview';
-const ADD_REVIEWS = 'reviews/addReviews';
-const REMOVE_REVIEW = 'reviews/deleteReview';
+const ADD_REVIEW = 'reviews/ADD_REVIEW';
+const ADD_REVIEWS = 'reviews/ADD_REVIEWS';
+const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW';
 
 export const addReview = review => ({
   type: ADD_REVIEW,
@@ -44,23 +44,34 @@ export const createReview = (review) => async dispatch => {
   return response;
 };
 
-export const deleteReview = (reviewId) => async dispatch => {
-  const response = await csrfFetch(`/api/trails/${reviewId.trailId}/reviews`, {
-      method: 'DELETE'
-  })
-  if (response.ok) {
-      dispatch(removeReview(reviewId));
-  }
-}
-
 
 export const fetchReviews = (trailId) => async dispatch => {
-  const response = await csrfFetch(`/api/trails/${trailId}/reviews`)
-  // debugger
-  
+  const response = await csrfFetch(`/api/trails/${trailId}/reviews`,{
+    method: 'GET',
+  })
   if (response.ok) {
     const data = await response.json();
     dispatch(addReviews(data));
+  }
+}
+export const fetchReview = (reviewId) => async dispatch => {
+  const res = await csrfFetch(`/api/reviews/${reviewId}`);
+  if (res.ok) {
+      const data = await res.json();
+      dispatch(addReview(data));
+  }
+}
+
+export const deleteReview = (trailId,reviewId) => async dispatch => {
+  console.log("testtesttest")
+  const response = await csrfFetch(`/api/trails/${trailId}/reviews/${reviewId}`, {
+    // const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+      method: 'DELETE'
+    })
+    // debugger;
+    
+  if (response.ok) {
+      dispatch(removeReview(reviewId));
   }
 }
 
@@ -78,7 +89,9 @@ function reviewsReducer(state = {}, action) {
       if (!action.payload) return state;
       return action.payload;
     case REMOVE_REVIEW:
-      delete nextState[action.reviewId];
+      // debugger;
+      delete nextState[action.payload];
+      // debugger;
       return nextState;
     
     default:
