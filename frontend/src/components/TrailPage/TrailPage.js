@@ -23,10 +23,12 @@ import t9 from '../HomePage/trail9.jpeg';
 import t10 from '../HomePage/trail10.jpeg';
 import location from '../TrailPage/location.png'; 
 import ReviewModal from '../ReviewModal'; 
+import ReviewForm from '../ReviewModal/Review';
 import handleWriteReivew from '../ReviewModal'
 // import reviewsReducer, { fetchReviews, getReviews, getReview} from '../../store/review';
 import reviewsReducer, { fetchReviews, getReviews, getReview, deleteReview } from '../../store/review';
 import head from "../TrailPage/review-icon.png";
+import EditReview from '../ReviewModal/EditReview';
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
@@ -41,13 +43,6 @@ const TrailsPage = () => {
             e.preventDefault();
             dispatch(deleteReview(trailId, review.id));
             // debugger;
-            // dispatch(fetchReviews(trailId));
-            // dispatch(fetchTrail(trailId));
-            // debugger;
-            // console.log(review.id);
-            // dispatch(deleteReview(trailId));
-            // dispatch(deleteReview);
-            
         }
         
         return (
@@ -62,10 +57,10 @@ const TrailsPage = () => {
                 <div className='review-body'>
                     {review.body}
                     {sessionUser.id == review.userId && 
-                    <>
-                <button className='editButton' >Edit </button>
-                    <button className='deleteButton' onClick={handleDelete}>Delete</button>
-                    </>
+                    <div className='reviewButton'>
+                <button className='editButton' > <EditReview />  </button>
+                <button className='deleteButton' onClick={handleDelete}>Delete</button>
+                    </div>
                     }
                 </div>
             </div>

@@ -54,8 +54,8 @@ export const fetchReviews = (trailId) => async dispatch => {
     dispatch(addReviews(data));
   }
 }
-export const fetchReview = (reviewId) => async dispatch => {
-  const res = await csrfFetch(`/api/reviews/${reviewId}`);
+export const fetchReview = (trailId,reviewId) => async dispatch => {
+  const res = await csrfFetch(`/api/trails/${trailId}/reviews/${reviewId}`);
   if (res.ok) {
       const data = await res.json();
       dispatch(addReview(data));
@@ -63,15 +63,26 @@ export const fetchReview = (reviewId) => async dispatch => {
 }
 
 export const deleteReview = (trailId,reviewId) => async dispatch => {
-  console.log("testtesttest")
   const response = await csrfFetch(`/api/trails/${trailId}/reviews/${reviewId}`, {
-    // const response = await csrfFetch(`/api/reviews/${reviewId}`, {
       method: 'DELETE'
     })
-    // debugger;
     
   if (response.ok) {
       dispatch(removeReview(reviewId));
+  }
+}
+
+export const editReview = (trailId,reviewId) => async dispatch => {
+  const response = await csrfFetch(`/api/trails/${trailId}/reviews/${reviewId}`, {
+      method: "PATCH",
+      body: JSON.stringify(reviewId),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  })
+  if (response.ok) {
+      let data = await response.json();
+      dispatch(addReview(data));
   }
 }
 

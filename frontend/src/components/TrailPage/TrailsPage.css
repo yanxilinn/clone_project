@@ -686,4 +686,25 @@
     margin-top: 2%;
 }
 
+.reviewButton{
+    /* border:2px solid black; */
+    padding-top: 10px;
+}
+
+.editButton{
+ border: transparent;
+ border-right: 1px solid gray;
+ background-color: transparent;
+ width: 50px;
+ cursor: pointer;
+ color: green;
+}
+
+.deleteButton{
+    border: transparent;
+    background-color: transparent;
+    width: 70px;
+    cursor: pointer;
+    color: green;
+}
 
