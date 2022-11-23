@@ -1,43 +1,40 @@
-// import React, { useState } from "react";
-// import * as sessionActions from "../../store/session";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import ReviewModal from '../ReviewModal/Review'; 
 import "../ReviewModal/Review.css";
 import { getTrail } from "../../store/trail";
-import {createReview, editReview, fetchReview} from '../../store/review';
+import {createReview, editReview, fetchReview, getReview,getReviews} from '../../store/review';
 import {useInput, useSubmit} from "../../hooks";
-// import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { fetchTrail } from "../../store/trail";
 
-function EditReviewForm ( {closeForm} ) {
+function EditReviewForm ( {closeForm,review} ) {
     const dispatch = useDispatch();
+    const {reviewId} = useParams();
     const {trailId} = useParams();
+    let reviews = useSelector(getReviews);
     const sessionUser = useSelector(state => state.session.user);
     const trail = useSelector(getTrail(trailId));
-    // const review = useSelector(fetchReview(review.id));
-    const [body, onBodyChange] = useInput("");
-    const [errors, onSubmit] = useSubmit({
-        onSuccess: closeForm,
-        action: createReview({ trailId: trail.id, userId: sessionUser.id, body})
-    });
+    const [newBody, onNewBody] = useState(review.body); 
+    const handleBodyChange = (e) => {
+        console.log(e); 
+        onNewBody(e.target.value)
+    }
+    console.log(review)
 
-    const handleSubmit = (e) => {
-      console.log(e);
-      dispatch(createReview({trailId: trail.id, userId: sessionUser.id, body}));
+    const handlEditSubmit = (e) => {
+        dispatch(editReview({id:review.id, trailId: review.trailId, userId: sessionUser.id, body: newBody, date: review.date} ));
     }
 
+    if(trail){
     return (
           <>
             <h1 className="review-trail">{trail.tName}</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handlEditSubmit}>
               <div className="review-box2">
                 <textarea 
                   className="review-input" 
                   type="text" 
-                //   placeholder="Give back to the community. Share your thoughts about the trail so others want to expect." 
-                  value={body} 
-                  onChange={onBodyChange} 
+                  value={newBody} 
+                  onChange={handleBodyChange} 
                   required 
                 /> 
               </div> 
@@ -47,6 +44,9 @@ function EditReviewForm ( {closeForm} ) {
             </form> 
           </>
         );
+    }else{
+        return (<></>)
+    }
 }
 
 export default EditReviewForm;

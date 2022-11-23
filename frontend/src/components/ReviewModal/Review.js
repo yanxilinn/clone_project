@@ -19,7 +19,9 @@ function ReviewForm ( {closeForm} ) {
     const [errors, onSubmit] = useSubmit({
         onSuccess: closeForm,
         action: createReview({ trailId: trail.id, userId: sessionUser.id, body})
-    });
+      });
+      console.log("hhhhh");
+      console.log({body});
 
     const handleSubmit = (e) => {
       console.log(e);

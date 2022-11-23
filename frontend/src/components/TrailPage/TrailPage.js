@@ -26,24 +26,28 @@ import ReviewModal from '../ReviewModal';
 import ReviewForm from '../ReviewModal/Review';
 import handleWriteReivew from '../ReviewModal'
 // import reviewsReducer, { fetchReviews, getReviews, getReview} from '../../store/review';
-import reviewsReducer, { fetchReviews, getReviews, getReview, deleteReview } from '../../store/review';
+import reviewsReducer, { fetchReviews, getReviews, getReview, deleteReview, editReview } from '../../store/review';
 import head from "../TrailPage/review-icon.png";
 import EditReview from '../ReviewModal/EditReview';
+import EditReviewForm from '../ReviewModal/EditReviewModal';
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
     const {trailId} = useParams();
+    const {reviewId} = useParams();
     const trail = useSelector(getTrail(trailId));
     let reviews = useSelector(getReviews);
     // const review = useSelector(getReview);
     const sessionUser = useSelector(state => state.session.user);
     
     const reviewList = reviews.map((review) => {
+
         const handleDelete = (e) => {
             e.preventDefault();
             dispatch(deleteReview(trailId, review.id));
-            // debugger;
         }
+
+
         
         return (
             <div key={review.id}>
@@ -56,9 +60,9 @@ const TrailsPage = () => {
                 </div>
                 <div className='review-body'>
                     {review.body}
-                    {sessionUser.id == review.userId && 
+                    {sessionUser?.id == review.userId && 
                     <div className='reviewButton'>
-                <button className='editButton' > <EditReview />  </button>
+                <div className='editButton' > <EditReview review={review}/>  </div>
                 <button className='deleteButton' onClick={handleDelete}>Delete</button>
                     </div>
                     }

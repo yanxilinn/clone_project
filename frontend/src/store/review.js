@@ -72,10 +72,11 @@ export const deleteReview = (trailId,reviewId) => async dispatch => {
   }
 }
 
-export const editReview = (trailId,reviewId) => async dispatch => {
-  const response = await csrfFetch(`/api/trails/${trailId}/reviews/${reviewId}`, {
+export const editReview = (review) => async dispatch => {
+  debugger;
+  const response = await csrfFetch(`/api/trails/${review.trailId}/reviews/${review.id}`, {
       method: "PATCH",
-      body: JSON.stringify(reviewId),
+      body: JSON.stringify(review),
       headers: {
           'Content-Type': 'application/json'
       }
@@ -96,13 +97,10 @@ function reviewsReducer(state = {}, action) {
       return nextState;
     }
     case ADD_REVIEWS:
-      // debugger
       if (!action.payload) return state;
       return action.payload;
     case REMOVE_REVIEW:
-      // debugger;
       delete nextState[action.payload];
-      // debugger;
       return nextState;
     
     default:

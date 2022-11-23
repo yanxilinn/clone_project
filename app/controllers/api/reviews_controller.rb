@@ -1,12 +1,10 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :destroy, :update]
-    wrap_parameters include: Review.attribute_names + [:trailId, :userId]
+    wrap_parameters include: Review.attribute_names + ["trailId", "userId"]
 
     def index
-        # debugger
         trail = Trail.find_by(id: params[:trail_id])
         @reviews = trail.reviews
-        # @reviews = Review.where(trail_id: params[:trail_id])
         render :index
     end
 
