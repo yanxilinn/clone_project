@@ -21,7 +21,7 @@ export const getTrails = ({trails}) => {
 
 export const fetchTrails = () => async dispatch => {
     const response = await fetch("/api/trails");
-    debugger
+    // debugger
     if (response.ok) {
         let data = await response.json();
         dispatch(receiveTrails(data))

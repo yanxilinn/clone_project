@@ -7,82 +7,27 @@ import { getReviews } from '../../store/review';
 const SearchBar = () => {
   const dispatch = useDispatch();
   // const {trailId} = useParams();
-  let allTrails = useSelector(getReviews);
+  // let allTrails = useSelector(getTrails);
+  // console.log(allTrails);
   // debugger;
-  
+//   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   const arrList = arr.map((ele) => {
+//     return (
+//         <div key={ele}>
+//             <div eleNum>{ele}</div>
+//         </div>
+//     )
+// })
 
 return (
-  <>
-  </>
+  <></>
+  // <div>{arrList}</div>
 )
 }
 
 export default SearchBar;
 
 // const SearchBar = () => {
-
-// var content = [
-//     'Mount Tamalpais State Trail',
-//     'East and West Drive Loop',
-//     'Jennings Beach To Pine Creek Point Trail',
-//     'Twin Brooks Park Loop',
-//     'Teepee to Thrilla to Viper to IMBA Loop',
-//     'Forest Park Loop',
-//     'Alley Pond Park Loop',
-//     'Joe Michaels Mile',
-//     'Pelham Bay Park and Pelham Parkway',
-//     'hunter Island Loop Trail',
-//   ]
-//   var inp = document.querySelector('input');
-//   var showBox = document.getElementById('searchList');
-//   var box = document.getElementById('box');
-
-//   inp.oninput = () => {
-//     createNode();
-//   }
-
-//   function getVal() {
-//     let inpVal = inp.value;
-//     let arrVal = [];
-
-//     arrVal = inpVal.trim().split(' ').filter(item => {
-//       return item && !arrVal.includes(item);
-//     })
-//     return arrVal;
-//   }
-
-//   function createNode() {
-
-//     showBox.innerHTML = '';
-//     let val = getVal();
-//     let newArr = [];
- 
-//     if (val.length < 1) {
-//       return;
-//     }
-//     for (let i = 0; i < content.length; i++) {
-
-//       let result = val.some(item => {
-//         return content[i].includes(item);
-//       })
-//       if (result) {
-//         let str = content[i];
- 
-//         for (let j = 0; j < val.length; j++) {
-//           str = str.replaceAll(val[j], "<span>" + val[j] + "</span>");
-//         }
-//         newArr.push(str);
-//       }
-//     }
-
-//     for (let i = 0; i < newArr.length; i++) {
-//       let li = document.createElement('li');
-//       li.innerHTML = newArr[i];
-//     //   searchList.appendChild(li);
-//     };
-//   };
-
-// }
 
 // export default SearchBar; 
 //////////////////////////////////////////////////
@@ -152,6 +97,6 @@ export default SearchBar;
 // const fuse = new Fuse(list, options);
 
 // // Change the pattern
-// const pattern = "HUNTER"
+// const pattern = ""
 // const result = fuse.search(pattern)
 // return result

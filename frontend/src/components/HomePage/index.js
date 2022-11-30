@@ -1,7 +1,7 @@
 import './HomePage.css';
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import dog from '../HomePage/dog.png';
 import hiking from '../HomePage/hiking.png';
 import mountainBike from '../HomePage/mountainBiking.png';
@@ -22,13 +22,21 @@ import mypic from '../HomePage/mypic.png';
 import github from '../HomePage/github.gif';
 import linkedin from '../HomePage/linkedin.gif'; 
 import SearchBar from '../SearchBar';
-import {getTrails,getTrail} from '../../store/trail';
+import {getTrails,getTrail, fetchTrails} from '../../store/trail';
 // import {dropDown} from '../SearchBar/SearchInput';
 import React from 'react';
+import { useEffect } from 'react';
 
 
 
 const HomePage = () => {   
+    const dispatch = useDispatch();
+    
+    useEffect (() => {
+        dispatch(fetchTrails());
+        // debugger
+    }, [dispatch]);
+
     let getTimeState = () => {
         let timeNow = new Date();
         let hours = timeNow.getHours();
@@ -48,7 +56,7 @@ const HomePage = () => {
     const helloMessage = (sessionUser) ? `${textState} ${sessionUser.firstName}` : 'Find your next trail'
 
     const allTrails = useSelector(getTrails);
-    // console.log(state);
+    console.log(allTrails);
 
     // const searchInputDropDown = (e) => {
     //     return (
@@ -78,7 +86,6 @@ return (
         <div className='search-home'>
             <div className='search'>
                 <img id="search-img" src={search} alt=""/> 
-                    {/* <SearchBar /> */}
                 <div className='bar'>
                 <input className='bar-input' placeholder="Search by city, park, or trail name" />
                 </div>
@@ -86,7 +93,7 @@ return (
         </div>
         <div className='search-result'>
             <div className='search-result-list'>
-            123123123123
+                    <SearchBar />
             </div>
             </div>
         </div>
