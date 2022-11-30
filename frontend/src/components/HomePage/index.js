@@ -8,7 +8,7 @@ import mountainBike from '../HomePage/mountainBiking.png';
 import roadBike from '../HomePage/roadBiking.png';
 import running from '../HomePage/running.png';
 import wheelchair from '../HomePage/wheelchair.png';
-import search from '../HomePage/search.png';
+import searchImg from '../HomePage/search.png';
 // import * as sessionActions from "../../store/session"; 
 import t1 from '../HomePage/trail1.jpeg';
 import t2 from '../HomePage/trail2.jpeg';
@@ -24,17 +24,17 @@ import linkedin from '../HomePage/linkedin.gif';
 import SearchBar from '../SearchBar';
 import {getTrails,getTrail, fetchTrails} from '../../store/trail';
 // import {dropDown} from '../SearchBar/SearchInput';
-import React from 'react';
 import { useEffect } from 'react';
+import { React, useState } from 'react';
+import FreeSolo from '../SearchBar/SearchInput'
+
 
 
 
 const HomePage = () => {   
     const dispatch = useDispatch();
-    
     useEffect (() => {
         dispatch(fetchTrails());
-        // debugger
     }, [dispatch]);
 
     let getTimeState = () => {
@@ -54,10 +54,14 @@ const HomePage = () => {
     let textState = getTimeState();
     const sessionUser = useSelector(state => state.session.user);
     const helloMessage = (sessionUser) ? `${textState} ${sessionUser.firstName}` : 'Find your next trail'
-
+    const [searchTrail, setSearchTrail] = useState("");
     const allTrails = useSelector(getTrails);
-    console.log(allTrails);
-
+    // console.log(searchTrail);
+    // console.log("123");
+    const handleEnter = (e) => {
+        setSearchTrail(e.target.value)
+        console.log(setSearchTrail)
+    }
     // const searchInputDropDown = (e) => {
     //     return (
     //         <div>
@@ -85,15 +89,23 @@ return (
  
         <div className='search-home'>
             <div className='search'>
-                <img id="search-img" src={search} alt=""/> 
+                <img id="search-img" src={searchImg} alt=""/> 
                 <div className='bar'>
-                <input className='bar-input' placeholder="Search by city, park, or trail name" />
+                <input  className='bar-input' type="text"
+                   placeholder='Search by city, park, or trail name' 
+                    onChange={e => setSearchTrail(e.target.value)}
+                    value={searchTrail} 
+                    onKeyPress={handleEnter}
+                    required
+                 /> 
+                {/* <input className='bar-input' placeholder="Search by city, park, or trail name" /> */}
                 </div>
             </div>
+            
         </div>
         <div className='search-result'>
             <div className='search-result-list'>
-                    <SearchBar />
+                    <SearchBar searchTrail={searchTrail}/>
             </div>
             </div>
         </div>

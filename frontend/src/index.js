@@ -9,6 +9,7 @@ import configureStore from './store';
 import csrfFetch from "./store/csrf";
 import * as sessionActions from './store/session';
 import * as trailActions from './store/trail';
+import { StyledEngineProvider } from '@mui/material/styles';
 
 const store = configureStore();
 
@@ -35,7 +36,9 @@ function Root() {
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
+      <StyledEngineProvider injectFirst>
       <Root />
+      </StyledEngineProvider>
     </React.StrictMode>,
     document.getElementById('root')
   );
