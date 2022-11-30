@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 // import Review from '../ReviewModal/Review';
 import ReviewForm from '../ReviewModal/Review';
 
-function ReviewModal() {
+function ReviewModal({trailId}) {
   const sessionUser = useSelector(state => state.session.user);
   const [showModal, setShowModal] = useState(false);
   const history = useHistory();

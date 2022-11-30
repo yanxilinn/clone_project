@@ -213,7 +213,7 @@ const TrailsPage = () => {
                             </div>
                         </div>
                         <div className='review'>
-                            <ReviewModal />    
+                            <ReviewModal trailId={trail.id}/>    
                         </div>
                         <div className='review-post'>
                             <div className='block' />
