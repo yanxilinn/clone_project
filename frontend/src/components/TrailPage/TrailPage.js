@@ -37,6 +37,7 @@ const TrailsPage = () => {
     const {reviewId} = useParams();
     const trail = useSelector(getTrail(trailId));
     let reviews = useSelector(getReviews);
+    // console.log(reviews);
     // const review = useSelector(getReview);
     const sessionUser = useSelector(state => state.session.user);
     
@@ -46,9 +47,6 @@ const TrailsPage = () => {
             e.preventDefault();
             dispatch(deleteReview(trailId, review.id));
         }
-
-
-        
         return (
             <div key={review.id}>
                 <div className='review-info'>

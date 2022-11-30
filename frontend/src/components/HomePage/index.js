@@ -9,7 +9,6 @@ import roadBike from '../HomePage/roadBiking.png';
 import running from '../HomePage/running.png';
 import wheelchair from '../HomePage/wheelchair.png';
 import search from '../HomePage/search.png';
-import click from '../HomePage/click.png';
 // import * as sessionActions from "../../store/session"; 
 import t1 from '../HomePage/trail1.jpeg';
 import t2 from '../HomePage/trail2.jpeg';
@@ -22,11 +21,14 @@ import t8 from '../HomePage/trail8.webp';
 import mypic from '../HomePage/mypic.png';
 import github from '../HomePage/github.gif';
 import linkedin from '../HomePage/linkedin.gif'; 
-// import SearchBar from '../SearchBar';
+import SearchBar from '../SearchBar';
+import {getTrails,getTrail} from '../../store/trail';
+// import {dropDown} from '../SearchBar/SearchInput';
+import React from 'react';
+
 
 
 const HomePage = () => {   
-    // const userName = (sessionUser) ? sessionUser. : '123';
     let getTimeState = () => {
         let timeNow = new Date();
         let hours = timeNow.getHours();
@@ -40,26 +42,54 @@ const HomePage = () => {
         } 
         return text; 
     }; 
+
     let textState = getTimeState();
     const sessionUser = useSelector(state => state.session.user);
     const helloMessage = (sessionUser) ? `${textState} ${sessionUser.firstName}` : 'Find your next trail'
-    
+
+    const allTrails = useSelector(getTrails);
+    // console.log(state);
+
+    // const searchInputDropDown = (e) => {
+    //     return (
+    //         <div>
+    //             <input className='bar' placeholder="Search by city, park, or trail name" />
+    //             <Dropdown
+    //                 trigger={'focus'}
+    //                 position={'bottomLeft'}
+    //                 render={
+    //                     <Dropdown.Menu tabIndex={-1}>
+    //                         <Dropdown.Item>Trail 1</Dropdown.Item>
+    //                         <Dropdown.Item>Trail 2</Dropdown.Item>
+    //                         <Dropdown.Item>Trail 3</Dropdown.Item>
+    //                     </Dropdown.Menu>
+    //                 }
+    //             >
+    //             </Dropdown>
+    //         </div>
+    //     );
+    // }
 
 return (
     <div className='home'>
         <div className='homepage-bg' > 
         <div id='hello'>{ helloMessage }</div>
  
-        {/* <div className='search-home'> */}
-            
-          {/* <img id="search" src={search} alt=""/>  */}
-          {/* <input className='bar' placeholder=' Search by city, park, or trail name' > */}
-            {/* SearchBar */}
-            {/* <ul id="searchList"></ul> */}
-            {/* </input> */}
-          {/* <img id="click" src={click} alt=""/>  */}
-        {/* </div> */}
+        <div className='search-home'>
+            <div className='search'>
+                <img id="search-img" src={search} alt=""/> 
+                    {/* <SearchBar /> */}
+                <div className='bar'>
+                <input className='bar-input' placeholder="Search by city, park, or trail name" />
+                </div>
             </div>
+        </div>
+        <div className='search-result'>
+            <div className='search-result-list'>
+            123123123123
+            </div>
+            </div>
+        </div>
         <div className='block1'>
              <div className='home-show'>
             <div className='title'>

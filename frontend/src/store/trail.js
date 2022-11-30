@@ -16,13 +16,12 @@ export const getTrail = (trailId) => {
     return ({trails}) => (trails ? trails[trailId] : null);
 }
 export const getTrails = ({trails}) => {
-    // console.log('in get trails')
     return (trails ? Object.values(trails) : []);
 }
 
 export const fetchTrails = () => async dispatch => {
     const response = await fetch("/api/trails");
-    // debugger
+    debugger
     if (response.ok) {
         let data = await response.json();
         dispatch(receiveTrails(data))
