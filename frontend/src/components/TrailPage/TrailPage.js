@@ -30,6 +30,7 @@ import reviewsReducer, { fetchReviews, getReviews, getReview, deleteReview, edit
 import head from "../TrailPage/review-icon.png";
 import EditReview from '../ReviewModal/EditReview';
 import EditReviewForm from '../ReviewModal/EditReviewModal';
+import NearbyTrails from '../NearbyTrails/NearbyTrails';
 
 const TrailsPage = () => {
     const dispatch = useDispatch();
@@ -230,68 +231,8 @@ const TrailsPage = () => {
                             </div>
                             <div className='nearby'>
                                 <div id='nearby'>Nearby Trails</div>
-                                <div className='near'>
-                                <div id='near-top'>
-                                    <Link to='/trails/1' >
-                                      <img id="near-pic" src={t1} alt="" />
-                                    </Link>
-                                </div>
-                            <div id='near-bot'>
-                                <div className='near-trail'>
-                                    <div id="n-diff">Easy</div>
-                                    <div id="n-n">Mount Tamalpais State Trail</div>
-                                    <div id="n-lo">USA - New York</div>
-                                    <div id="n-leng">Length: 8.4mi</div>
-                                </div>
+                                <NearbyTrails trailId={trail.id}/>
                             </div>
-                        </div>
-                        <div className='near'>
-                            <div id='near-top'>
-                                <Link to='/trails/2' >
-                                    <img id="near-pic" src={t2} alt="" />
-                                </Link>
-                            </div>
-                            <div id='near-bot'>
-                                <div className='near-trail'>
-                                    <div id="n-diff">Hard</div>
-                                    <div id="n-n">East and West Drive Loop</div>
-                                    <div id="n-lo">USA - New York</div>
-                                    <div id="n-leng">Length: 6.1mi</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='near'>
-                            <div id='near-top'>
-                                <Link to='/trails/3' >
-                                    <img id="near-pic" src={t3} alt=""  />
-                                </Link>
-                            </div>
-                            <div id='near-bot'>
-                                <div className='near-trail'>
-                                    <div id="n-diff">Moderate</div>
-                                    <div id="n-n">Jennings Beach To Pine Creek Point Trail</div>
-                                    <div id="n-lo">USA - New York</div>
-                                    <div id="n-leng">Length: 4.9mi</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='near'>
-                            <div id='near-top'>
-                                <Link to='/trails/4' >
-                                    <img id="near-pic" src={t4} alt=""  />
-                                </Link>
-                            </div>
-                            <div id='near-bot'>
-                                <div className='near-trail'>
-                                    <div id="n-diff">Easy</div>
-                                    <div id="n-n">Twin Brooks Park Loop</div>
-                                    <div id="n-lo">USA - New York</div>
-                                    <div id="n-leng">Length: 2.5mi</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        </div>
                     </div>
 
             </div>
