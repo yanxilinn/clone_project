@@ -26,7 +26,6 @@ import {getTrails,getTrail, fetchTrails} from '../../store/trail';
 // import {dropDown} from '../SearchBar/SearchInput';
 import { useEffect } from 'react';
 import { React, useState } from 'react';
-import FreeSolo from '../SearchBar/SearchInput'
 
 
 
@@ -86,7 +85,6 @@ return (
     <div className='home'>
         <div className='homepage-bg' > 
         <div id='hello'>{ helloMessage }</div>
- 
         <div className='search-home'>
             <div className='search'>
                 <img id="search-img" src={searchImg} alt=""/> 
@@ -98,7 +96,6 @@ return (
                     onKeyPress={handleEnter}
                     required
                  /> 
-                {/* <input className='bar-input' placeholder="Search by city, park, or trail name" /> */}
                 </div>
             </div>
             

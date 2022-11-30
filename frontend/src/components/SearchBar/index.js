@@ -6,6 +6,7 @@ import { getReviews } from '../../store/review';
 import { useEffect } from 'react';
 import * as React from 'react';
 import Fuse from 'fuse.js';
+import TerrainSharpIcon from '@mui/icons-material/TerrainSharp';
 
 const SearchBar = ({searchTrail}) => {
   const dispatch = useDispatch();
@@ -28,8 +29,9 @@ const filter = new Fuse(trails, options);
 const searchResults = filter.search(keyWord);
 const trailsList = searchResults.map((trail) => {
     return(
-      <div>
-        <Link to={`/trails/${trail.item.id}`}>
+      <div className='searchResult'>
+        <TerrainSharpIcon style={{marginLeft:"1%", marginRight:"1%", color:"green", height:"100%"}}/>
+        <Link className='trailLink' to={`/trails/${trail.item.id}`}>
         {trail.item.tName}
         </Link>
       </div>
@@ -38,12 +40,16 @@ const trailsList = searchResults.map((trail) => {
 )
 
 if(keyWord && searchResults.length==0){
-  return<>No Result for "{keyWord}"</>
+  return(
+  <div className='noResult'>
+  No Result for "{keyWord}"
+  </div>
+  )
 }
 else
 {
   return (
-    <div>
+    <div className='showResults'>
       {trailsList}
     </div>
     

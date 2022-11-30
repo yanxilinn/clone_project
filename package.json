@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "@douyinfe/semi-ui": "^2.24.2",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "fuse.js": "^6.6.2",
     "google-map-react": "^2.2.0",
