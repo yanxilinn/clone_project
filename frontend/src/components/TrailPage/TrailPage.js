@@ -9,7 +9,7 @@ import weather from "./weather.png"
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchTrail, getTrail } from '../../store/trail';
+import { fetchTrail, fetchTrails, getTrail } from '../../store/trail';
 import TrailMap from '../TrailPage/TrailMap.js';
 import t1 from '../HomePage/trail1.jpeg';
 import t2 from '../HomePage/trail2.jpeg';
@@ -72,7 +72,7 @@ const TrailsPage = () => {
 
     useEffect (() => {
         // dispatch(fetchTrails());
-        dispatch(fetchTrail(trailId));
+        dispatch(fetchTrails());
         dispatch(fetchReviews(trailId));
         // debugger
     }, [dispatch, trailId]);

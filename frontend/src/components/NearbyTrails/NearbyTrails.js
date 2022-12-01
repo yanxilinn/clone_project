@@ -14,11 +14,12 @@ import t9 from '../HomePage/trail9.jpeg';
 import t10 from '../HomePage/trail10.jpeg';
 
 const NearbyTrails = ({trailId}) => {
+    // debugger; 
     let currentTrail = trailId; 
-    // console.log(trailId);
+    console.log(trailId);
     const dispatch = useDispatch();
     const trails = useSelector(getTrails);
-    // console.log(trails);
+    console.log(trails);
 
     function getRandomArrayElements(arr, count) {
         var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
@@ -37,6 +38,7 @@ const NearbyTrails = ({trailId}) => {
 
 
     const nearbyTrailsList = nearbyTrailsArr.map((trail)=>{
+        // debugger; 
         let nearbyTrail = trail.id; 
         if(nearbyTrail!=currentTrail){
             return(
@@ -68,11 +70,11 @@ const NearbyTrails = ({trailId}) => {
         }
     })
 
-    useEffect (() => {
-        dispatch(fetchTrails());
-        // dispatch(fetchTrail(trailId));
-        // debugger
-    }, [dispatch]);
+    // useEffect (() => {
+    //     dispatch(fetchTrails());
+    //     // dispatch(fetchTrail(trailId));
+    //     // debugger
+    // }, [dispatch]);
 
 
     return(
