@@ -23,14 +23,14 @@ console.log(keyWord);
 const options = {
   shouldSort: true,
   threshold: 0.4,
-  keys: ["tName"]
+  keys: ["tName","id"]
 }
 const filter = new Fuse(trails, options);
 const searchResults = filter.search(keyWord);
 const trailsList = searchResults.map((trail) => {
     return(
       <div className='searchResult'>
-        <TerrainSharpIcon style={{marginLeft:"1%", marginRight:"1%", color:"green", height:"100%"}}/>
+        <TerrainSharpIcon style={{marginLeft:"1%", marginRight:"1%", color:"green"}}/>
         <Link className='trailLink' to={`/trails/${trail.item.id}`}>
         {trail.item.tName}
         </Link>
@@ -52,10 +52,9 @@ else
     <div className='showResults'>
       {trailsList}
     </div>
-    
   );
 };
-return(<></>);
+return(<>123</>);
 }
 
 

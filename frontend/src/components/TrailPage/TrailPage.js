@@ -121,7 +121,6 @@ const TrailsPage = () => {
                         {trail.id == 8 && <img id="img" src={t8} alt="" />}
                         {trail.id == 9 && <img id="img" src={t9} alt="" />}
                         {trail.id == 10 && <img id="img" src={t10} alt="" />}
-                        {/* <img id="img" src={tImg1} alt="" /> */}
                     </div>
                 </div>
                 {/* <div className='trailPic2'>
@@ -206,12 +205,12 @@ const TrailsPage = () => {
                             <div id='condition1'>No conditions reported in the past 7 days</div>
                             <div id='condition2'>Want to report conditions for this trail? Write a review to inform other visitors!</div>
                         </div>
-                        <div className='weather'>
+                        {/* <div className='weather'>
                             <div id='w'><div id='w-t'> Weather </div></div>
                             <div id='weather'>
                             <img id="weather" src={weather} alt="" /> 
                             </div>
-                        </div>
+                        </div> */}
                         <div className='review'>
                             <ReviewModal trailId={trail.id}/>    
                         </div>
@@ -224,11 +223,11 @@ const TrailsPage = () => {
 
                     </div>
                     <div className='right-col'>
-                            <div className='map-box'> 
+                            {/* <div className='map-box'> 
                                 <TrailMap trails={[trail]} mapOptions={{ center: { lat: trail.latitude, lng: trail.longitude }}} />
                                 <img id="location-poiter" src={location} alt=""  />
                                 <p id='suggest-edit'>Suggest Edit</p>
-                            </div>
+                            </div> */}
                             <div className='nearby'>
                                 <div id='nearby'>Nearby Trails</div>
                                 <NearbyTrails trailId={trail.id}/>

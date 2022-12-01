@@ -25,7 +25,7 @@ function TrailMap({
         ...mapOptions,
       }));
     }
-  }, [mapRef, map]);
+  }, [mapRef, map, trails]);
 
   return (
     <div ref={mapRef} className="map">

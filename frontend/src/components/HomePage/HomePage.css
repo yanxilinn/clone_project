@@ -51,11 +51,12 @@
     position: relative;
     /* border: 5px solid red; */
     border-radius: 35px;
-    background-color: white;
+    background-color: white; 
     width: 50%;
     min-width: 400px;
     display: flex;
     align-items: center;
+    z-index: 20;
 }
 #search-img{
     /* background-color: aqua; */
@@ -84,7 +85,7 @@
 }
 .search-result{
     /* background-color: white; */
-    /* height: 200px; */
+    /* height: auto; */
     position: absolute;
     display: contents;
     width: 100%;
@@ -97,7 +98,7 @@
 
 .search-result-list{
     /* position:relative; */
-    height: 30%;
+    height: auto;
     background-color: white;
     width: 47%;
     min-width: 300px;

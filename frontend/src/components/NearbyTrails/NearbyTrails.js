@@ -14,6 +14,7 @@ import t9 from '../HomePage/trail9.jpeg';
 import t10 from '../HomePage/trail10.jpeg';
 
 const NearbyTrails = ({trailId}) => {
+    let currentTrail = trailId; 
     // console.log(trailId);
     const dispatch = useDispatch();
     const trails = useSelector(getTrails);
@@ -36,11 +37,12 @@ const NearbyTrails = ({trailId}) => {
 
 
     const nearbyTrailsList = nearbyTrailsArr.map((trail)=>{
-        if(trail.id!=trailId){
+        let nearbyTrail = trail.id; 
+        if(nearbyTrail!=currentTrail){
             return(
                 <div className='near'>
                                 <div id='near-top'>
-                                    <Link to={`/trails/${trail.id}`} >
+                                    <Link to={`/trails/${nearbyTrail}`} >
                                         {trail.id == 1 && <img id="near-pic" src={t1}  alt="" />}
                                         {trail.id == 2 && <img id="near-pic" src={t2}  alt="" />}
                                         {trail.id == 3 && <img id="near-pic" src={t3}  alt="" />}
@@ -70,7 +72,7 @@ const NearbyTrails = ({trailId}) => {
         dispatch(fetchTrails());
         // dispatch(fetchTrail(trailId));
         // debugger
-    }, [dispatch,trailId]);
+    }, [dispatch]);
 
 
     return(
