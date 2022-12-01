@@ -73,7 +73,7 @@ export const deleteReview = (trailId,reviewId) => async dispatch => {
 }
 
 export const editReview = (review) => async dispatch => {
-  debugger;
+  // debugger;
   const response = await csrfFetch(`/api/trails/${review.trailId}/reviews/${review.id}`, {
       method: "PATCH",
       body: JSON.stringify(review),

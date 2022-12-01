@@ -15,10 +15,10 @@ function EditReviewForm ( {closeForm,review} ) {
     const trail = useSelector(getTrail(trailId));
     const [newBody, onNewBody] = useState(review.body); 
     const handleBodyChange = (e) => {
-        console.log(e); 
+        // console.log(e); 
         onNewBody(e.target.value)
     }
-    console.log(review)
+    // console.log(review)
 
     const handlEditSubmit = (e) => {
         dispatch(editReview({id:review.id, trailId: review.trailId, userId: sessionUser.id, body: newBody, date: review.date} ));

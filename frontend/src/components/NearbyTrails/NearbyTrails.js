@@ -16,10 +16,10 @@ import t10 from '../HomePage/trail10.jpeg';
 const NearbyTrails = ({trailId}) => {
     // debugger; 
     let currentTrail = trailId; 
-    console.log(trailId);
+    // console.log(trailId);
     const dispatch = useDispatch();
     const trails = useSelector(getTrails);
-    console.log(trails);
+    // console.log(trails);
 
     function getRandomArrayElements(arr, count) {
         var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
@@ -33,7 +33,7 @@ const NearbyTrails = ({trailId}) => {
     }
     
     const nearbyTrailsArr = getRandomArrayElements(trails, 5) 
-    console.log(nearbyTrailsArr);
+    // console.log(nearbyTrailsArr);
 
 
 

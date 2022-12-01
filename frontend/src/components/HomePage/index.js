@@ -59,7 +59,7 @@ const HomePage = () => {
     // console.log("123");
     const handleEnter = (e) => {
         setSearchTrail(e.target.value)
-        console.log(setSearchTrail)
+        // console.log(setSearchTrail)
     }
     // const searchInputDropDown = (e) => {
     //     return (

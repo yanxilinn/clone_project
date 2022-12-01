@@ -19,7 +19,7 @@ const SearchBar = ({searchTrail}) => {
 
 const trails = useSelector(getTrails);
 let keyWord = searchTrail
-console.log(keyWord);
+// console.log(keyWord);
 const options = {
   shouldSort: true,
   threshold: 0.4,

@@ -20,11 +20,11 @@ function ReviewForm ( {closeForm} ) {
         onSuccess: closeForm,
         action: createReview({ trailId: trail.id, userId: sessionUser.id, body})
       });
-      console.log("hhhhh");
-      console.log({body});
+      // console.log("hhhhh");
+      // console.log({body});
 
     const handleSubmit = (e) => {
-      console.log(e);
+      // console.log(e);
       dispatch(createReview({trailId: trail.id, userId: sessionUser.id, body}));
     }
 
